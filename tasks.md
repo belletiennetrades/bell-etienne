@@ -14,6 +14,8 @@
 - [x] Perform micro-audits and write custom pitch scripts
 - [x] Create `sales_call_list.md`
 - [ ] Create `sales_tracker.md` to log call outcomes
+- [ ] Draft "Digital Handyman" cold email template
+- [ ] Send first cold email to a prospect (e.g., MEP Air Incorporation)
 - [ ] Conduct first batch of 10 calls/visits
 - [ ] Draft "Local Maintenance Proposal" template for "YES" responses
 
