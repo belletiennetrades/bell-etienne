@@ -9,8 +9,14 @@
 - [x] Verify live site at `https://belletiennetrades.github.io/bell-etienne/`
 - [x] **South Coast Demo:** Refine demo at `/southcoast/index.html` (Fix logo, condense Handyman section) — rebuilt as full preview site, deployed
 - [x] Initial staging of South Coast demo at `/southcoast/index.html`
+- [x] **Marc Wilmers Demo:** Build full preview at `/marcwilmers/index.html` and deploy to GitHub Pages
 - [ ] Share live demo with Matt Warshaw / South Coast Aquatics for feedback
+- [ ] Share live demo with Marc Wilmers — (818) 517-6010
 - [ ] Enhance UI/UX (Refine typography, mobile links, subtle accents)
+
+## 📋 Protocols (To Formalize)
+- [ ] **Prospect Demo Protocol (Discovery → Build → Deploy):** Write a repeatable checklist now that we have two demos under our belt — research inputs needed, template anchor file, palette/copy decisions, `.gitignore` allowlist step, commit/push steps, sharing message format.
+- [ ] **Go-Live Protocol:** Defer until first paying customer. Will cover domain handoff, DNS/SSL, redirects, contact form wiring, analytics, ownership transfer, recurring caretaker setup.
 
 ## 📞 Sales & Outreach
 - [x] Research 10 local prospects in North Hills
