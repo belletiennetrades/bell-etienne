@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marc Wilmers Heating & Air — Valencia and Santa Clarita's most-trusted family HVAC contractor. 25+ years, 5-star service, top 4% of CA licensed contractors.">
+    <title>Marc Wilmers Heating & Air | Valencia & Santa Clarita HVAC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate: #0f2740;
+            --slate-2: #143456;
+            --steel: #2f6ca0;
+            --ember: #e87722;
+            --ember-2: #c45e16;
+            --gold: #d4a017;
+            --ink: #1a2330;
+            --muted: #5b6675;
+            --line: #e6ebf0;
+            --cream: #faf6f1;
+            --white: #ffffff;
+            --radius: 10px;
+            --shadow: 0 10px 30px rgba(15, 39, 64, 0.08);
+            --shadow-lg: 0 24px 60px rgba(15, 39, 64, 0.18);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Preview ribbon — single tasteful top line */
+        .preview-ribbon {
+            background: var(--ink);
+            color: #fff;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+        .preview-ribbon strong { color: var(--ember); font-weight: 700; }
+        .preview-ribbon a { text-decoration: underline; opacity: 0.85; }
+
+        /* Header */
+        header.site-header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: saturate(140%) blur(8px);
+            -webkit-backdrop-filter: saturate(140%) blur(8px);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-mark {
+            width: 46px;
+            height: 46px;
+            flex: 0 0 46px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 800;
+            font-size: 1.18rem;
+            color: var(--slate);
+            line-height: 1.05;
+            letter-spacing: 0.005em;
+        }
+        .logo-text small {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            color: var(--ember);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+        nav.primary {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        nav.primary a {
+            font-weight: 500;
+            font-size: 0.92rem;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+        nav.primary a:hover { color: var(--ember); }
+        .nav-cta {
+            background: var(--ember);
+            color: #fff !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem !important;
+            transition: background 0.15s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .nav-cta:hover { background: var(--ember-2); transform: translateY(-1px); color: #fff !important; }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--slate);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--slate) 0%, var(--slate-2) 55%, #1d4774 100%);
+            color: #fff;
+            overflow: hidden;
+            padding: 96px 0 110px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background:
+              radial-gradient(circle at 85% 10%, rgba(232, 119, 34, 0.28), transparent 45%),
+              radial-gradient(circle at 10% 90%, rgba(47, 108, 160, 0.30), transparent 50%);
+            pointer-events: none;
+        }
+        .hero-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0; right: 0;
+            line-height: 0;
+        }
+        .hero-wave svg { width: 100%; height: 80px; display: block; }
+
+        .hero-inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffe0c5;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+        .eyebrow .dot {
+            width: 6px; height: 6px;
+            background: var(--ember);
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 4.8vw, 3.5rem);
+            line-height: 1.08;
+            font-weight: 800;
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--ember);
+            font-weight: 700;
+        }
+        .hero p.lede {
+            font-size: 1.12rem;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+        .cta-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: var(--ember);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--ember-2);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(232, 119, 34, 0.40);
+        }
+        .btn-outline {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+        }
+        .btn .arrow { transition: transform 0.2s; }
+        .btn:hover .arrow { transform: translateX(3px); }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .stat .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--ember);
+            line-height: 1;
+        }
+        .stat .label {
+            font-size: 0.82rem;
+            opacity: 0.8;
+            margin-top: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        /* Hero visual card */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 28px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+        }
+        .hero-card-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--ember);
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .schedule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .schedule-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.92rem;
+        }
+        .schedule-list li:last-child { border-bottom: none; }
+        .schedule-list .pill {
+            background: rgba(232, 119, 34, 0.2);
+            color: #ffc89a;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .schedule-list .pill.cool {
+            background: rgba(47, 108, 160, 0.28);
+            color: #b8d6f0;
+        }
+
+        /* Section common */
+        section.block { padding: 96px 0; }
+        section.block.alt { background: var(--cream); }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 56px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-eyebrow {
+            color: var(--ember);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 14px;
+        }
+        .section-head h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            color: var(--slate);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .section-head p {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        /* Services grid */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        .service {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 34px 28px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ember), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .service:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, var(--ember), #f1933f);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            color: #fff;
+        }
+        .service-icon.cool {
+            background: linear-gradient(135deg, var(--steel), #4a90c2);
+        }
+        .service h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.32rem;
+            color: var(--slate);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .service .tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            background: var(--cream);
+            color: var(--ember-2);
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .service p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        .service .learn {
+            color: var(--ember);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .service .learn:hover { color: var(--slate); }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+            color: var(--slate);
+            line-height: 1.18;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
+        .about-grid p { color: var(--muted); margin-bottom: 16px; font-size: 1.02rem; }
+        .pillars {
+            list-style: none;
+            margin-top: 24px;
+        }
+        .pillars li {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .pillars li:last-child { border-bottom: none; }
+        .pillars .check {
+            width: 22px; height: 22px;
+            background: var(--ember);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.7rem;
+            margin-top: 2px;
+            font-weight: 700;
+        }
+        .about-visual {
+            background: linear-gradient(135deg, var(--slate) 0%, var(--steel) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-visual::after {
+            content: "";
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(232, 119, 34, 0.35), transparent 60%);
+        }
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            line-height: 1.45;
+            font-style: italic;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .quote::before {
+            content: "\201C";
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--ember);
+            display: block;
+            margin-bottom: -20px;
+        }
+        .quote-attribution {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-attribution strong { color: var(--gold); display: block; font-weight: 700; }
+
+        .badge-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge svg { color: var(--ember); }
+
+        /* Service area strip */
+        .area-strip {
+            background: var(--slate);
+            color: #fff;
+            padding: 64px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .area-strip::before {
+            content: "";
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(232, 119, 34, 0.10), transparent 60%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .area-strip h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            position: relative;
+        }
+        .area-strip p { opacity: 0.85; margin-bottom: 32px; position: relative; }
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 14px;
+            max-width: 920px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .area-tile {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            padding: 18px 14px;
+            border-radius: 10px;
+            transition: background 0.2s, border-color 0.2s;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .area-tile:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(232, 119, 34, 0.45);
+        }
+        .area-tile .zip {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--ember);
+            margin-top: 2px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* Reviews strip */
+        .reviews-section { background: var(--cream); }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        .stars {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 14px;
+        }
+        .review-text {
+            color: var(--ink);
+            font-size: 0.98rem;
+            line-height: 1.55;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+        .review-avatar {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ember), var(--gold));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .review-meta .who { font-weight: 700; color: var(--slate); font-size: 0.92rem; }
+        .review-meta .where { color: var(--muted); font-size: 0.78rem; }
+
+        .reviews-summary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 56px;
+            flex-wrap: wrap;
+        }
+        .summary-block {
+            text-align: center;
+            padding: 0 20px;
+        }
+        .summary-block .big {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--ember);
+            line-height: 1;
+        }
+        .summary-block .lbl {
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* Contact / CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+            padding: 96px 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            background: #fff;
+            border-radius: 18px;
+            padding: 56px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+        .contact-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+            color: var(--slate);
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .contact-grid > div:first-child > p {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+        .contact-list { list-style: none; }
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-top: 1px solid var(--line);
+        }
+        .contact-list li:first-child { border-top: none; padding-top: 0; }
+        .contact-icon {
+            width: 38px; height: 38px;
+            background: var(--cream);
+            color: var(--ember);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-list .label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .contact-list .value {
+            font-weight: 600;
+            color: var(--slate);
+        }
+        .contact-list .value a:hover { color: var(--ember); }
+
+        .signup-card {
+            background: var(--slate);
+            color: #fff;
+            border-radius: 14px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .signup-card::before {
+            content: "";
+            position: absolute;
+            top: -40%; left: -10%;
+            width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(232, 119, 34, 0.32), transparent 60%);
+        }
+        .signup-card > * { position: relative; z-index: 1; }
+        .signup-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .signup-card p { opacity: 0.88; font-size: 0.95rem; margin-bottom: 24px; }
+        .signup-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        .signup-card .meta {
+            margin-top: 18px;
+            font-size: 0.82rem;
+            opacity: 0.78;
+            text-align: center;
+        }
+        .signup-card .meta a { color: #ffc89a; text-decoration: underline; }
+
+        /* Footer */
+        footer.site-footer {
+            background: #08172a;
+            color: #98a3b3;
+            padding: 56px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo-text { color: #fff; }
+        .footer-brand .logo-text small { color: var(--ember); }
+        .footer-brand p {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            max-width: 320px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; font-size: 0.92rem; }
+        .footer-col a:hover { color: var(--ember); }
+        .license-line {
+            margin-top: 14px;
+            font-size: 0.78rem;
+            opacity: 0.75;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom .stamp {
+            color: var(--ember);
+            opacity: 0.78;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { padding: 36px; }
+            .services, .reviews-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav.primary { display: none; }
+            .menu-toggle { display: block; }
+            section.block { padding: 64px 0; }
+            .hero { padding: 64px 0 80px; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+        }
+        @media (max-width: 520px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .contact-grid { padding: 28px 22px; }
+            .reviews-summary { gap: 16px; }
+            .summary-block .big { font-size: 1.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview ribbon -->
+    <div class="preview-ribbon">
+        <strong>PREVIEW BUILD</strong> · A faster, mobile-first rebuild proposed by Bell-Etienne — <a href="mailto:belletienne.trades@gmail.com">leave feedback</a>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="Marc Wilmers Heating & Air">
+                <!-- Inline SVG mark — flame + snowflake monogram -->
+                <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#0f2740"/>
+                    <circle cx="32" cy="32" r="30" stroke="#d4a017" stroke-width="2" fill="none"/>
+                    <!-- Flame on the left, snowflake on the right -->
+                    <path d="M22 44c-3-1-5-4-5-7 0-4 4-5 4-9 0-2-1-3-1-3s5 2 5 7c0-3 2-5 2-5s3 4 3 8c0 5-4 9-8 9z" fill="#e87722"/>
+                    <g stroke="#ffffff" stroke-width="1.6" stroke-linecap="round">
+                      <line x1="44" y1="22" x2="44" y2="34"/>
+                      <line x1="38" y1="28" x2="50" y2="28"/>
+                      <line x1="40" y1="24" x2="48" y2="32"/>
+                      <line x1="48" y1="24" x2="40" y2="32"/>
+                    </g>
+                    <text x="32" y="58" text-anchor="middle" fill="#d4a017" font-family="Georgia, serif" font-size="7" font-weight="700" letter-spacing="1">EST. 2000</text>
+                </svg>
+                <div class="logo-text">
+                    Marc Wilmers Heating &amp; Air
+                    <small>Valencia · Santa Clarita</small>
+                </div>
+            </a>
+            <nav class="primary" aria-label="Primary">
+                <a href="#services">Services</a>
+                <a href="#about">About Marc</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#area">Service Area</a>
+                <a href="tel:+18185176010" class="nav-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (818) 517-6010
+                </a>
+            </nav>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div>
+                <span class="eyebrow"><span class="dot"></span> Santa Clarita Valley · 25+ Years</span>
+                <h1>Honest HVAC. <em>Done right</em>, the first time.</h1>
+                <p class="lede">Family-owned heating &amp; air conditioning in Valencia, Santa Clarita, and the surrounding SCV. Straightforward pricing, same-day service, and a crew Marc has trained for two decades.</p>
+                <div class="cta-group">
+                    <a href="tel:+18185176010" class="btn btn-primary">
+                        Call (818) 517-6010 <span class="arrow">→</span>
+                    </a>
+                    <a href="#services" class="btn btn-outline">See Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="num">25+</div>
+                        <div class="label">Years in business</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">5.0★</div>
+                        <div class="label">211 Yelp reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">Top 4%</div>
+                        <div class="label">of CA contractors</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-card" aria-label="What we do">
+                <div class="hero-card-label">Common Calls</div>
+                <h3>Same-day diagnostics. Most repairs done in one visit.</h3>
+                <ul class="schedule-list">
+                    <li>AC not cooling <span class="pill">Same-day</span></li>
+                    <li>Furnace won't ignite <span class="pill">Same-day</span></li>
+                    <li>New system install <span class="pill cool">Free bid</span></li>
+                    <li>Full replacement <span class="pill cool">Free bid</span></li>
+                    <li>Tune-up &amp; maintenance <span class="pill cool">Scheduled</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="block" id="services">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">What We Do</div>
+                <h2>Heating, cooling, and everything in between.</h2>
+                <p>From a single thermostat call to a complete two-system install in a day — we handle the residential HVAC work Valencia and Santa Clarita actually need.</p>
+            </div>
+
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon cool" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/></svg>
+                    </div>
+                    <h3>AC Installation</h3>
+                    <span class="tag">Free Bid</span>
+                    <p>Complete central AC installs and replacements. Marc writes a clear, line-item proposal — what equipment, what labor, what timeline — so you know exactly what you're paying for.</p>
+                    <a href="tel:+18185176010" class="learn">Request a bid →</a>
+                </div>
+
+                <div class="service">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    </div>
+                    <h3>Furnace &amp; Heating</h3>
+                    <span class="tag">Install &amp; Repair</span>
+                    <p>Furnace replacement, ignition issues, blower problems, heat exchanger inspections. We install what fits your house — not the unit with the highest margin.</p>
+                    <a href="tel:+18185176010" class="learn">Talk to Marc →</a>
+                </div>
+
+                <div class="service">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Repairs &amp; Diagnostics</h3>
+                    <span class="tag">Same-Day</span>
+                    <p>System not cooling, not heating, making noise, or just acting up? We diagnose first, then quote — no upselling, no guesswork. Most repairs handled in one visit.</p>
+                    <a href="tel:+18185176010" class="learn">Book a call →</a>
+                </div>
+
+                <div class="service">
+                    <div class="service-icon cool" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/><path d="M3 9h6"/><path d="M15 9h6"/><path d="M3 15h6"/><path d="M15 15h6"/></svg>
+                    </div>
+                    <h3>Multi-Zone &amp; Split Systems</h3>
+                    <span class="tag">Specialty</span>
+                    <p>Two zones, three zones, mini-splits for that addition — we design and install the system that actually keeps every room comfortable, not just the one with the thermostat.</p>
+                    <a href="tel:+18185176010" class="learn">Get a quote →</a>
+                </div>
+
+                <div class="service">
+                    <div class="service-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Maintenance Plans</h3>
+                    <span class="tag">Preventive</span>
+                    <p>Pre-summer AC tune-ups, pre-winter furnace checks. A 30-minute visit twice a year is the difference between a $90 service call and a $9,000 emergency replacement.</p>
+                    <a href="tel:+18185176010" class="learn">Schedule a tune-up →</a>
+                </div>
+
+                <div class="service">
+                    <div class="service-icon cool" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><polyline points="12 2 12 14"/><polyline points="8 6 12 2 16 6"/></svg>
+                    </div>
+                    <h3>Rental &amp; Property HVAC</h3>
+                    <span class="tag">For Landlords</span>
+                    <p>We've worked with local landlords and property managers for two decades. Fast response, tenant-friendly scheduling, and a single point of contact: Marc.</p>
+                    <a href="tel:+18185176010" class="learn">Get on the list →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Marc -->
+    <section class="block alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <div class="section-eyebrow">Meet Marc</div>
+                    <h2>One owner. One number. One person responsible for every job.</h2>
+                    <p>Marc Wilmers has been doing HVAC in the Santa Clarita Valley for more than 25 years. The crew you meet on install day are people Marc trained — most have been with him for years, not months.</p>
+                    <p>That's why the bids are clear, the install is clean, and the follow-up call actually happens. There's nobody to pass the buck to — Marc owns the company, and Marc owns the work.</p>
+                    <ul class="pillars">
+                        <li><span class="check">✓</span> 25+ years installing HVAC across SCV</li>
+                        <li><span class="check">✓</span> California licensed C-20 (HVAC) contractor</li>
+                        <li><span class="check">✓</span> Top 4% of CA contractors by BuildZoom</li>
+                        <li><span class="check">✓</span> Same-day service · same-week installs</li>
+                        <li><span class="check">✓</span> Straightforward, upfront pricing — no commission selling</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <p class="quote">Marc was straightforward, honest, and upfront about pricing — and his proposal was more comprehensive than the three other bids we got. The crew installed two AC's and two furnaces in six hours. I can't recommend him highly enough.</p>
+                    <div class="quote-attribution">
+                        <strong>Yelp Reviewer · Valencia, CA</strong>
+                        From among 211 five-star reviews
+                    </div>
+                    <div class="badge-row">
+                        <span class="badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            5.0 on Yelp
+                        </span>
+                        <span class="badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.6 1.98"/></svg>
+                            CSLB Licensed &amp; Bonded
+                        </span>
+                        <span class="badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            Top 4% CA Contractors
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="block reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">What Neighbors Are Saying</div>
+                <h2>Two decades of work. Hundreds of 5-star reviews.</h2>
+            </div>
+
+            <div class="reviews-summary">
+                <div class="summary-block">
+                    <div class="big">5.0★</div>
+                    <div class="lbl">Yelp Rating</div>
+                </div>
+                <div class="summary-block">
+                    <div class="big">211</div>
+                    <div class="lbl">Yelp Reviews</div>
+                </div>
+                <div class="summary-block">
+                    <div class="big">25+</div>
+                    <div class="lbl">Years Serving SCV</div>
+                </div>
+                <div class="summary-block">
+                    <div class="big">Top 4%</div>
+                    <div class="lbl">CA Contractors</div>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"What made Marc stand out was his professionalism and customer service. He was punctual, explained everything, and made sure we understood the pros and cons of each option. The crew was efficient and courteous."</div>
+                    <div class="review-meta">
+                        <div class="review-avatar">JC</div>
+                        <div>
+                            <div class="who">Jeff C.</div>
+                            <div class="where">Valencia, CA · Yelp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"Marc came out the same day we called, and our AC was installed and running the very next day. His bid was extremely competitive and clearly written — way more detail than the others we got. Highly recommend."</div>
+                    <div class="review-meta">
+                        <div class="review-avatar">LM</div>
+                        <div>
+                            <div class="who">Linda M.</div>
+                            <div class="where">Santa Clarita, CA · Yelp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-text">"Two AC's and two furnaces installed in 6 hours. The team was professional, on time, and cleaned up after themselves. Marc has earned a customer for life — and we've recommended him to half the neighborhood."</div>
+                    <div class="review-meta">
+                        <div class="review-avatar">RS</div>
+                        <div>
+                            <div class="who">Robert S.</div>
+                            <div class="where">Stevenson Ranch, CA · Yelp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="area-strip" id="area">
+        <div class="container">
+            <h3>Proudly serving the Santa Clarita Valley</h3>
+            <p>Local crews, local response times. If you're in any of these communities, call us today.</p>
+            <div class="area-grid">
+                <div class="area-tile">Valencia<span class="zip">91354 · 91355</span></div>
+                <div class="area-tile">Santa Clarita<span class="zip">91350 · 91390</span></div>
+                <div class="area-tile">Newhall<span class="zip">91321</span></div>
+                <div class="area-tile">Canyon Country<span class="zip">91387 · 91351</span></div>
+                <div class="area-tile">Saugus<span class="zip">91350</span></div>
+                <div class="area-tile">Stevenson Ranch<span class="zip">91381</span></div>
+                <div class="area-tile">Castaic<span class="zip">91384</span></div>
+                <div class="area-tile">Agua Dulce<span class="zip">91390</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="section-eyebrow">Get a Bid · Book a Service</div>
+                    <h2>Talk to Marc directly.</h2>
+                    <p>No call centers, no phone trees, no scripts. Most of the time, you'll get Marc himself. We respond same-day for service calls and within 24 hours for install bids.</p>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Phone</div>
+                                <div class="value"><a href="tel:+18185176010">(818) 517-6010</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Office</div>
+                                <div class="value">25670 Springbrook Ave<br>Santa Clarita, CA 91350</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Hours</div>
+                                <div class="value">Mon – Fri · 7:00 AM – 6:00 PM<br><span style="color:var(--muted); font-weight:500;">Emergency service available</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="signup-card" id="request">
+                    <h3>Need it fixed today?</h3>
+                    <p>We keep slots open every day for same-day diagnostic calls. Pick up the phone, tell Marc what's going on, and we'll get someone out there.</p>
+                    <a href="tel:+18185176010" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call (818) 517-6010
+                    </a>
+                    <div class="meta">Prefer to text? Send a quick note to <a href="sms:+18185176010">(818) 517-6010</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="32" cy="32" r="30" fill="#08172a"/>
+                            <circle cx="32" cy="32" r="30" stroke="#d4a017" stroke-width="2" fill="none"/>
+                            <path d="M22 44c-3-1-5-4-5-7 0-4 4-5 4-9 0-2-1-3-1-3s5 2 5 7c0-3 2-5 2-5s3 4 3 8c0 5-4 9-8 9z" fill="#e87722"/>
+                            <g stroke="#ffffff" stroke-width="1.6" stroke-linecap="round">
+                              <line x1="44" y1="22" x2="44" y2="34"/>
+                              <line x1="38" y1="28" x2="50" y2="28"/>
+                              <line x1="40" y1="24" x2="48" y2="32"/>
+                              <line x1="48" y1="24" x2="40" y2="32"/>
+                            </g>
+                        </svg>
+                        <div class="logo-text">
+                            Marc Wilmers Heating &amp; Air
+                            <small>Santa Clarita Valley</small>
+                        </div>
+                    </div>
+                    <p>Family-owned heating and air conditioning serving Valencia, Santa Clarita, and the SCV for more than 25 years.</p>
+                    <div class="license-line">CA C-20 Licensed Contractor · Bonded · Insured</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">AC Installation</a></li>
+                        <li><a href="#services">Furnace &amp; Heating</a></li>
+                        <li><a href="#services">Repairs</a></li>
+                        <li><a href="#services">Maintenance Plans</a></li>
+                        <li><a href="#services">Multi-Zone Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Service Area</h4>
+                    <ul>
+                        <li>Valencia</li>
+                        <li>Santa Clarita</li>
+                        <li>Newhall · Canyon Country</li>
+                        <li>Saugus · Stevenson Ranch</li>
+                        <li>Castaic · Agua Dulce</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="tel:+18185176010">(818) 517-6010</a></li>
+                        <li><a href="sms:+18185176010">Text Marc</a></li>
+                        <li><a href="#request">Request Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Marc Wilmers Heating &amp; Air. All rights reserved.</div>
+                <div class="stamp">Preview built by Bell-Etienne · Digital Caretaker for the Trades</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+            const nav = document.querySelector('nav.primary');
+            const open = nav.style.display === 'flex';
+            nav.style.display = open ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '100%';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = '#fff';
+            nav.style.padding = '20px';
+            nav.style.borderTop = '1px solid #e6ebf0';
+            nav.style.gap = '16px';
+            nav.style.alignItems = 'flex-start';
+        });
+    </script>
+
+</body>
+</html>
