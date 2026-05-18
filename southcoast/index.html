@@ -3,211 +3,1007 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Coast Aquatics | Performance Preview</title>
+    <meta name="description" content="South Coast Aquatics — championing excellence in water polo and swimming in the Conejo Valley since 1989. Year-round programs for ages 10U through 18U.">
+    <title>South Coast Aquatics | Water Polo & Swimming · Conejo Valley</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #002147;
-            --blue: #0056b3;
-            --light: #f4f7f9;
-            --text: #333333;
+            --navy: #001a3a;
+            --navy-2: #002a5c;
+            --blue: #0066cc;
+            --aqua: #2db8e0;
+            --gold: #d4a017;
+            --ink: #1a2330;
+            --muted: #5b6675;
+            --line: #e6ebf0;
+            --cream: #f6f9fc;
             --white: #ffffff;
+            --radius: 10px;
+            --shadow: 0 10px 30px rgba(0, 26, 58, 0.08);
+            --shadow-lg: 0 24px 60px rgba(0, 26, 58, 0.18);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text);
+            color: var(--ink);
             background: var(--white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Preview Banner */
-        .preview-banner {
-            background: #d4a017;
-            color: #000;
-            text-align: center;
-            padding: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        header {
-            background: var(--white);
-            padding: 20px;
+        /* Preview ribbon — small and tasteful, top of page */
+        .preview-ribbon {
+            background: var(--ink);
+            color: #fff;
             text-align: center;
-            border-bottom: 4px solid var(--navy);
+            padding: 8px 16px;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+        .preview-ribbon strong { color: var(--gold); font-weight: 700; }
+        .preview-ribbon a { text-decoration: underline; opacity: 0.85; }
+
+        /* Header */
+        header.site-header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: saturate(140%) blur(8px);
+            -webkit-backdrop-filter: saturate(140%) blur(8px);
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--navy);
+            line-height: 1.05;
+            letter-spacing: 0.01em;
+        }
+        .logo-text small {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            color: var(--blue);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        nav.primary {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        nav.primary a {
+            font-weight: 500;
+            font-size: 0.92rem;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+        nav.primary a:hover { color: var(--blue); }
+        .nav-cta {
+            background: var(--blue);
+            color: #fff !important;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem !important;
+            transition: background 0.15s, transform 0.15s;
+        }
+        .nav-cta:hover { background: var(--navy); transform: translateY(-1px); color: #fff !important; }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
         }
 
-        header img {
-            max-width: 200px;
-            height: auto;
-        }
-
+        /* Hero */
         .hero {
-            background: var(--navy);
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 55%, var(--blue) 100%);
+            color: #fff;
+            overflow: hidden;
+            padding: 96px 0 110px;
         }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background:
+              radial-gradient(circle at 85% 10%, rgba(45, 184, 224, 0.35), transparent 45%),
+              radial-gradient(circle at 10% 90%, rgba(45, 184, 224, 0.20), transparent 50%);
+            pointer-events: none;
+        }
+        .hero-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0; right: 0;
+            line-height: 0;
+        }
+        .hero-wave svg { width: 100%; height: 80px; display: block; }
 
+        .hero-inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #cfe4ff;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+        .eyebrow .dot {
+            width: 6px; height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 4.8vw, 3.5rem);
+            line-height: 1.08;
+            font-weight: 800;
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
         }
-
-        .hero p {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .hero h1 em {
+            font-style: italic;
+            color: var(--aqua);
+            font-weight: 700;
         }
-
+        .hero p.lede {
+            font-size: 1.12rem;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
         .cta-group {
             display: flex;
-            gap: 15px;
-            justify-content: center;
+            gap: 14px;
             flex-wrap: wrap;
         }
-
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
         }
-
-        .btn:active {
-            transform: scale(0.95);
-        }
-
         .btn-primary {
-            background: var(--blue);
-            color: var(--white);
+            background: var(--gold);
+            color: var(--navy);
         }
-
+        .btn-primary:hover {
+            background: #e6b424;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(212, 160, 23, 0.35);
+        }
         .btn-outline {
-            border: 2px solid var(--white);
-            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+        }
+        .btn .arrow { transition: transform 0.2s; }
+        .btn:hover .arrow { transform: translateX(3px); }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .stat .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .stat .label {
+            font-size: 0.82rem;
+            opacity: 0.8;
+            margin-top: 6px;
+            letter-spacing: 0.04em;
         }
 
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
+        /* Hero visual card */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 28px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+        }
+        .hero-card-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .schedule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .schedule-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.92rem;
+        }
+        .schedule-list li:last-child { border-bottom: none; }
+        .schedule-list .pill {
+            background: rgba(45, 184, 224, 0.2);
+            color: var(--aqua);
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Section common */
+        section.block {
+            padding: 96px 0;
+        }
+        section.block.alt { background: var(--cream); }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 64px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-eyebrow {
+            color: var(--blue);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 14px;
+        }
+        .section-head h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            color: var(--navy);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .section-head p {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        /* Programs grid */
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .program {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 36px 30px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .program::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--aqua));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .program:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .program:hover::before { transform: scaleX(1); }
+        .program-icon {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, var(--blue), var(--aqua));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            color: #fff;
+        }
+        .program h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .program .ages {
+            display: inline-block;
+            font-size: 0.74rem;
+            background: var(--cream);
+            color: var(--blue);
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 14px;
+        }
+        .program p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+        }
+        .program .learn {
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .program .learn:hover { color: var(--navy); }
+
+        /* About / Mission */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+            color: var(--navy);
+            line-height: 1.18;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
+        .about-grid p { color: var(--muted); margin-bottom: 16px; font-size: 1.02rem; }
+        .pillars {
+            list-style: none;
+            margin-top: 24px;
+        }
+        .pillars li {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .pillars li:last-child { border-bottom: none; }
+        .pillars .check {
+            width: 22px; height: 22px;
+            background: var(--blue);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+        .about-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-visual::after {
+            content: "";
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(45, 184, 224, 0.4), transparent 60%);
+        }
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            line-height: 1.45;
+            font-style: italic;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .quote::before {
+            content: """;
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--aqua);
+            display: block;
+            margin-bottom: -20px;
+        }
+        .quote-attribution {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.9rem;
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-attribution strong { color: var(--gold); display: block; font-weight: 600; }
+
+        /* Coaches strip */
+        .coaches-strip {
+            background: var(--navy);
+            color: #fff;
+            padding: 64px 0;
+            text-align: center;
+        }
+        .coaches-strip h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .coaches-strip p { opacity: 0.85; margin-bottom: 32px; }
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
+        .coach-tile {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px 14px;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+        .coach-tile:hover { background: rgba(255, 255, 255, 0.1); }
+        .coach-tile .name {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .coach-tile .role {
+            font-size: 0.78rem;
+            color: var(--aqua);
+            letter-spacing: 0.04em;
+        }
 
-        .features {
+        /* Contact / CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+            padding: 96px 0;
+        }
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            background: #fff;
+            border-radius: 18px;
+            padding: 56px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+        .contact-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .contact-grid > div:first-child > p {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+        .contact-list {
+            list-style: none;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-top: 1px solid var(--line);
+        }
+        .contact-list li:first-child { border-top: none; padding-top: 0; }
+        .contact-icon {
+            width: 38px; height: 38px;
+            background: var(--cream);
+            color: var(--blue);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-list .label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .contact-list .value {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .contact-list .value a:hover { color: var(--blue); }
+
+        .signup-card {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 14px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .signup-card::before {
+            content: "";
+            position: absolute;
+            top: -40%; left: -10%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(45, 184, 224, 0.4), transparent 60%);
+        }
+        .signup-card > * { position: relative; z-index: 1; }
+        .signup-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .signup-card p { opacity: 0.85; font-size: 0.95rem; margin-bottom: 24px; }
+        .signup-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        .signup-card .meta {
+            margin-top: 18px;
+            font-size: 0.82rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #051226;
+            color: #98a3b3;
+            padding: 56px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
+            margin-bottom: 40px;
         }
-
-        .feature-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 5px solid var(--blue);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: var(--navy);
-        }
-
-        .modern-tools {
-            background: var(--light);
-            text-align: center;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 40px;
-        }
-
-        .modern-tools h2 {
-            color: var(--navy);
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: #111;
-            color: #999;
-            padding: 40px 20px;
-            text-align: center;
+        .footer-brand .logo-text { color: #fff; }
+        .footer-brand p {
+            margin-top: 14px;
             font-size: 0.9rem;
+            max-width: 320px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; font-size: 0.92rem; }
+        .footer-col a:hover { color: var(--aqua); }
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .socials a {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+        .socials a:hover { background: var(--blue); color: #fff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom .stamp {
+            color: var(--gold);
+            opacity: 0.75;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
+        /* Responsive */
+        @media (max-width: 960px) {
+            .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { padding: 36px; }
+            .programs { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav.primary { display: none; }
+            .menu-toggle { display: block; }
+            section.block { padding: 64px 0; }
+            .hero { padding: 64px 0 80px; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+        }
+        @media (max-width: 520px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .contact-grid { padding: 28px 22px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="preview-banner">
-        Digital Handyman Preview: 2.4x Faster Loading & Modern Mobile Updates
+    <!-- Preview ribbon (tasteful, single line) -->
+    <div class="preview-ribbon">
+        <strong>PREVIEW BUILD</strong> · A faster, mobile-first rebuild proposed by Bell-Etienne — <a href="mailto:belletienne.trades@gmail.com">leave feedback</a>
     </div>
 
-    <header>
-        <img src="https://southcoastaquatics.com/wp-content/uploads/2021/05/South-Coast-Logo-Final-1.png" alt="South Coast Aquatics Logo">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="South Coast Aquatics">
+                <!-- Inline SVG mark — guaranteed to render, no broken-image risk -->
+                <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" fill="#001a3a"/>
+                    <circle cx="32" cy="32" r="30" stroke="#d4a017" stroke-width="2" fill="none"/>
+                    <path d="M10 38c4-3 8-3 12 0s8 3 12 0 8-3 12 0 6 2 8 1" stroke="#2db8e0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <path d="M10 30c4-3 8-3 12 0s8 3 12 0 8-3 12 0 6 2 8 1" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+                    <text x="32" y="22" text-anchor="middle" fill="#d4a017" font-family="Georgia, serif" font-size="9" font-weight="700" letter-spacing="1">SCA</text>
+                </svg>
+                <div class="logo-text">
+                    South Coast Aquatics
+                    <small>Water Polo · Swimming · 1989</small>
+                </div>
+            </a>
+            <nav class="primary" aria-label="Primary">
+                <a href="#programs">Programs</a>
+                <a href="#about">About</a>
+                <a href="#coaches">Coaches</a>
+                <a href="#contact">Contact</a>
+                <a href="#register" class="nav-cta">Register</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
     </header>
 
-    <div class="hero">
-        <h1>Championing Excellence in the Conejo Valley</h1>
-        <p>Since 1989, we've provided year-round programs designed to teach water polo & swimming fundamentals, sportsmanship, and enthusiasm.</p>
-        <div class="cta-group">
-            <a href="#" class="btn btn-primary">Register Now</a>
-            <a href="#" class="btn btn-outline">Summer 2027 Schedule</a>
-        </div>
-    </div>
-
-    <section>
-        <div class="features">
-            <div class="feature-card">
-                <h3>Water Polo</h3>
-                <p>From Splash Ball to 18U Elite, we provide top-tier coaching and competitive opportunities for all ages.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Youth Swimming</h3>
-                <p>Build confidence and technique with our year-round swimming programs led by experienced coaches.</p>
-            </div>
-        </div>
-
-        <div class="modern-tools">
-            <h2>Digital Handyman Upgrades</h2>
-            <p>We've staged this preview to show how modern web tech can streamline your operations.</p>
-            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <div>
-                    <strong>⚡ Instant Load</strong>
-                    <p style="font-size: 0.9rem;">Optimized for mobile speeds under 1 second.</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div>
+                <span class="eyebrow"><span class="dot"></span> Conejo Valley · Est. 1989</span>
+                <h1>Championing <em>excellence</em> in water polo and swimming.</h1>
+                <p class="lede">Year-round programs designed to teach fundamentals, sportsmanship, and the lifelong love of competition — for athletes ages 10U through 18U.</p>
+                <div class="cta-group">
+                    <a href="#register" class="btn btn-primary">
+                        Register for Summer 2027 <span class="arrow">→</span>
+                    </a>
+                    <a href="#programs" class="btn btn-outline">Explore Programs</a>
                 </div>
-                <div>
-                    <strong>📱 Text-to-Coach</strong>
-                    <p style="font-size: 0.9rem;">One-tap messaging for schedule updates.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="num">36+</div>
+                        <div class="label">Years competing</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">30+</div>
+                        <div class="label">Expert coaches</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">10U–18U</div>
+                        <div class="label">All ages welcome</div>
+                    </div>
                 </div>
-                <div>
-                    <strong>📅 Live Schedules</strong>
-                    <p style="font-size: 0.9rem;">Auto-syncing calendars for 2026/2027.</p>
+            </div>
+
+            <aside class="hero-card" aria-label="Upcoming season">
+                <div class="hero-card-label">Upcoming Season</div>
+                <h3>Summer 2027 · Registration is open</h3>
+                <ul class="schedule-list">
+                    <li>Splash Ball <span class="pill">Ages 8–10</span></li>
+                    <li>10U Boys & Girls <span class="pill">Spots left</span></li>
+                    <li>12U / 14U <span class="pill">Open</span></li>
+                    <li>16U / 18U Elite <span class="pill">Tryout</span></li>
+                    <li>Youth Swim <span class="pill">Year-round</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="block" id="programs">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Our Programs</div>
+                <h2>Built for every athlete, from first splash to elite competition.</h2>
+                <p>Whether you're stepping into the pool for the first time or chasing a college roster spot, we've got a program for you.</p>
+            </div>
+
+            <div class="programs">
+                <div class="program">
+                    <div class="program-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Water Polo</h3>
+                    <span class="ages">10U · 12U · 14U · 16U · 18U</span>
+                    <p>From foundational ball-handling to elite-level tournament play. Boys' and girls' divisions, with top-tier coaching and competitive opportunities.</p>
+                    <a href="#" class="learn">See age groups →</a>
+                </div>
+
+                <div class="program">
+                    <div class="program-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a4 4 0 0 1 4-2 4 4 0 0 1 4 2 4 4 0 0 0 4 0 4 4 0 0 1 4-2 4 4 0 0 1 4 2"/><path d="M2 14a4 4 0 0 1 4-2 4 4 0 0 1 4 2 4 4 0 0 0 4 0 4 4 0 0 1 4-2 4 4 0 0 1 4 2"/><circle cx="16" cy="7" r="2"/></svg>
+                    </div>
+                    <h3>Youth Swimming</h3>
+                    <span class="ages">Year-round · All levels</span>
+                    <p>Confidence in the water, technique in every stroke. Our swim program builds the fundamentals that carry over to water polo and a lifetime of fitness.</p>
+                    <a href="#" class="learn">View schedule →</a>
+                </div>
+
+                <div class="program">
+                    <div class="program-icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
+                    </div>
+                    <h3>Splash Ball</h3>
+                    <span class="ages">Ages 8–10 · Beginner</span>
+                    <p>A fun, low-pressure introduction to water polo. Kids learn the basics in a positive, encouraging atmosphere — the gateway to everything we do.</p>
+                    <a href="#" class="learn">Get started →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        &copy; 2026 South Coast Aquatics. Demo staged by Bell-Etienne.
+    <!-- About / Mission -->
+    <section class="block alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <div class="section-eyebrow">Our Mission</div>
+                    <h2>A positive sports atmosphere, where every athlete reaches their potential.</h2>
+                    <p>For more than three decades, South Coast Aquatics has been a home for athletes in the Conejo Valley. We're built on a simple idea: when coaches encourage, athletes excel.</p>
+                    <p>Our programs are designed to develop the whole athlete — technical skill, mental toughness, and the kind of sportsmanship that travels far beyond the pool.</p>
+                    <ul class="pillars">
+                        <li><span class="check">✓</span> Encouraging, certified coaching staff</li>
+                        <li><span class="check">✓</span> Year-round development, no off-season gaps</li>
+                        <li><span class="check">✓</span> Pathways from Splash Ball to 18U Elite</li>
+                        <li><span class="check">✓</span> Strong, supportive Conejo Valley community</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <p class="quote">South Coast isn't just a club — it's where my kids learned discipline, teamwork, and that hard work actually pays off. Best decision we made.</p>
+                    <div class="quote-attribution">
+                        <strong>SCA Parent</strong>
+                        Conejo Valley · Returning family
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches -->
+    <section class="coaches-strip" id="coaches">
+        <div class="container">
+            <h3>30+ coaches. One standard.</h3>
+            <p>Led by Director Matt Warshaw, our staff brings decades of competitive and coaching experience to every age group.</p>
+            <div class="coach-grid">
+                <div class="coach-tile"><div class="name">Matt Warshaw</div><div class="role">Director</div></div>
+                <div class="coach-tile"><div class="name">Jason Rosenthal</div><div class="role">Senior Coach</div></div>
+                <div class="coach-tile"><div class="name">Derek Allen</div><div class="role">Coach</div></div>
+                <div class="coach-tile"><div class="name">Colton Arnett</div><div class="role">Coach</div></div>
+                <div class="coach-tile"><div class="name">Luke Chang</div><div class="role">Coach</div></div>
+                <div class="coach-tile"><div class="name">+ Full Staff</div><div class="role">Meet the team</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Register CTA -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="section-eyebrow">Get in Touch</div>
+                    <h2>Ready to join the team?</h2>
+                    <p>We'd love to hear from you. Reach out to Director Matt Warshaw directly, or sign up below.</p>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Phone</div>
+                                <div class="value"><a href="tel:+18056602082">(805) 660-2082</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Email</div>
+                                <div class="value"><a href="mailto:matt@southcoastaquatics.com">matt@southcoastaquatics.com</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <div class="label">Address</div>
+                                <div class="value">275 East Hillcrest Drive #160-234<br>Thousand Oaks, CA 91360</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="signup-card" id="register">
+                    <h3>Register for Summer 2027</h3>
+                    <p>Spots are filling — secure your athlete's place in our flagship summer program.</p>
+                    <a href="#" class="btn btn-primary">Start Registration <span class="arrow">→</span></a>
+                    <div class="meta">Or text Coach Matt: <a href="sms:+18056602082" style="color:var(--aqua); text-decoration:underline;">(805) 660-2082</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="32" cy="32" r="30" fill="#0a1f3d"/>
+                            <circle cx="32" cy="32" r="30" stroke="#d4a017" stroke-width="2" fill="none"/>
+                            <path d="M10 38c4-3 8-3 12 0s8 3 12 0 8-3 12 0 6 2 8 1" stroke="#2db8e0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                            <text x="32" y="22" text-anchor="middle" fill="#d4a017" font-family="Georgia, serif" font-size="9" font-weight="700" letter-spacing="1">SCA</text>
+                        </svg>
+                        <div class="logo-text">
+                            South Coast Aquatics
+                            <small>Conejo Valley · 1989</small>
+                        </div>
+                    </div>
+                    <p>Championing excellence in water polo and swimming for the Conejo Valley since 1989.</p>
+                    <div class="socials">
+                        <a href="https://instagram.com/southcoastaquatics" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://twitter.com/southcoastaqua" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="https://facebook.com/southcoastaquatics" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#programs">Water Polo</a></li>
+                        <li><a href="#programs">Youth Swimming</a></li>
+                        <li><a href="#programs">Splash Ball</a></li>
+                        <li><a href="#programs">18U Elite</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Club</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#coaches">Coaches</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Team Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="tel:+18056602082">(805) 660-2082</a></li>
+                        <li><a href="mailto:matt@southcoastaquatics.com">Email Coach Matt</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 South Coast Aquatics. All rights reserved.</div>
+                <div class="stamp">Preview built by Bell-Etienne · Digital Caretaker for the Trades</div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Tiny mobile nav toggle — keeps things simple, no framework needed.
+        document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+            const nav = document.querySelector('nav.primary');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '100%';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = '#fff';
+            nav.style.padding = '20px';
+            nav.style.borderTop = '1px solid #e6ebf0';
+            nav.style.gap = '16px';
+        });
+    </script>
 
 </body>
 </html>
