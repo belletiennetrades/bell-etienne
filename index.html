@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Digital Caretaker | Website Maintenance for Local Pros</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --gray: #666666;
+            --accent: #000000;
+            --border: #eeeeee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --text: #ededed;
+                --gray: #a0a0a0;
+                --accent: #ffffff;
+                --border: #222222;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--gray);
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .tier {
+            border: 1px solid var(--border);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .tier-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .tier-price {
+            font-family: monospace;
+            font-weight: 700;
+        }
+
+        .tier-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .premium-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .premium-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .premium-item:last-child {
+            border-bottom: none;
+        }
+
+        .premium-title {
+            font-weight: 700;
+            display: block;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .cta-box {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: var(--border);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .mono {
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+            header {
+                margin-bottom: 40px;
+            }
+            .tier-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bell-Etienne</h1>
+        <div class="subtitle">Digital Handyman Services for the Trades.</div>
+        <div class="mono" style="margin-top: 15px;">310-902-4425 (Text or Call) &bull; North Hills, CA</div>
+    </header>
+
+    <section>
+        <h2>The Mission</h2>
+        <p>Just like a leaky pipe or a shorted circuit, a broken website costs you money. Most local businesses have a "digital storefront" that is either outdated, insecure, or completely broken. A "Not Secure" warning is the digital version of a burst pipe in your front yard.</p>
+        <p><strong>Bell-Etienne is your digital handyman.</strong> We handle the tech infrastructure—security, updates, and maintenance—so your business stays online and professional while you're on the job site.</p>
+    </section>
+
+    <section>
+        <h2>Maintenance Tiers</h2>
+        
+        <div class="tier">
+            <div class="tier-header">
+                <span class="tier-title">The Watchdog</span>
+                <span class="tier-price">$49/mo</span>
+            </div>
+            <div class="tier-desc">Foundation & Security</div>
+            <ul>
+                <li><strong>Security Monitoring:</strong> We block bots and hackers.</li>
+                <li><strong>SSL Management:</strong> No more "Not Secure" warnings.</li>
+                <li><strong>Weekly Backups:</strong> Recovery in minutes if things break.</li>
+                <li><strong>Software Updates:</strong> We keep plugins and themes current.</li>
+            </ul>
+        </div>
+
+        <div class="tier">
+            <div class="tier-header">
+                <span class="tier-title">The Local Partner</span>
+                <span class="tier-price">$99/mo</span>
+            </div>
+            <div class="tier-desc">Active Maintenance</div>
+            <ul>
+                <li>Everything in The Watchdog.</li>
+                <li><strong>1 Hour of Content Updates:</strong> Change phone numbers, update hours, or add project photos. Just text us.</li>
+                <li><strong>Performance Tuning:</strong> Fast loading on all mobile devices.</li>
+            </ul>
+        </div>
+
+        <div class="tier">
+            <div class="tier-header">
+                <span class="tier-title">The Growth Plan</span>
+                <span class="tier-price">$199/mo</span>
+            </div>
+            <div class="tier-desc">Full Digital Presence</div>
+            <ul>
+                <li>Everything in The Partner.</li>
+                <li><strong>Google Business Management:</strong> We update your Google posts and photos to keep you ranking.</li>
+                <li><strong>3 Hours of Updates:</strong> For businesses growing fast.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Modern Tools for Local Shops</h2>
+        <p>Add these modern features to your existing site to increase professional trust and conversion.</p>
+        <ul class="premium-list">
+            <li class="premium-item">
+                <span class="premium-title">Payment Services</span>
+                Stop chasing checks. We'll set up a simple portal for your customers to pay via credit card or Apple Pay directly on your site.
+            </li>
+            <li class="premium-item">
+                <span class="premium-title">Calendar & Booking</span>
+                Let customers book quotes or service calls directly. Syncs instantly with your phone's calendar.
+            </li>
+            <li class="premium-item">
+                <span class="premium-title">Text-to-Customer</span>
+                A "Text Us" button on your site that goes straight to your phone. Never miss a lead while you're on a job.
+            </li>
+        </ul>
+    </section>
+
+    <section class="cta-box">
+        <h2>Get Started</h2>
+        <p>Text or Call <strong>310-902-4425</strong></p>
+        <p>Receive a free 5-minute micro-audit of your current website.</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Bell-Etienne Digital Handyman. Built for the Valley.
+    </footer>
+
+</body>
+</html>
