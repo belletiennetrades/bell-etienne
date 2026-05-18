@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Coast Aquatics | Performance Preview</title>
+    <style>
+        :root {
+            --navy: #002147;
+            --blue: #0056b3;
+            --light: #f4f7f9;
+            --text: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        /* Preview Banner */
+        .preview-banner {
+            background: #d4a017;
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        header {
+            background: var(--white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .hero {
+            background: var(--navy);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--blue);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .modern-tools {
+            background: var(--light);
+            text-align: center;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .modern-tools h2 {
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #111;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preview-banner">
+        Digital Handyman Preview: 2.4x Faster Loading & Modern Mobile Updates
+    </div>
+
+    <header>
+        <img src="https://southcoastaquatics.com/wp-content/uploads/2021/05/South-Coast-Logo-Final-1.png" alt="South Coast Aquatics Logo">
+    </header>
+
+    <div class="hero">
+        <h1>Championing Excellence in the Conejo Valley</h1>
+        <p>Since 1989, we've provided year-round programs designed to teach water polo & swimming fundamentals, sportsmanship, and enthusiasm.</p>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Register Now</a>
+            <a href="#" class="btn btn-outline">Summer 2027 Schedule</a>
+        </div>
+    </div>
+
+    <section>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Water Polo</h3>
+                <p>From Splash Ball to 18U Elite, we provide top-tier coaching and competitive opportunities for all ages.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Youth Swimming</h3>
+                <p>Build confidence and technique with our year-round swimming programs led by experienced coaches.</p>
+            </div>
+        </div>
+
+        <div class="modern-tools">
+            <h2>Digital Handyman Upgrades</h2>
+            <p>We've staged this preview to show how modern web tech can streamline your operations.</p>
+            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div>
+                    <strong>⚡ Instant Load</strong>
+                    <p style="font-size: 0.9rem;">Optimized for mobile speeds under 1 second.</p>
+                </div>
+                <div>
+                    <strong>📱 Text-to-Coach</strong>
+                    <p style="font-size: 0.9rem;">One-tap messaging for schedule updates.</p>
+                </div>
+                <div>
+                    <strong>📅 Live Schedules</strong>
+                    <p style="font-size: 0.9rem;">Auto-syncing calendars for 2026/2027.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 South Coast Aquatics. Demo staged by Bell-Etienne.
+    </footer>
+
+</body>
+</html>
