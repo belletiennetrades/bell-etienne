@@ -13,15 +13,16 @@
 - [x] Research 10 local prospects in North Hills
 - [x] Perform micro-audits and write custom pitch scripts
 - [x] Create `sales_call_list.md`
-- [ ] Create `sales_tracker.md` to log call outcomes
-- [ ] Draft "Digital Handyman" cold email template
-- [ ] Send first cold email to a prospect (e.g., MEP Air Incorporation)
+- [x] Create `sales_tracker.md` to log call outcomes
+- [x] Draft "Digital Handyman" cold email template
+- [x] Send first cold email test to Chris Bell & liegev@gmail.com
+- [ ] Send first real cold email to a prospect (e.g., MEP Air Incorporation)
 - [ ] Conduct first batch of 10 calls/visits
 - [ ] Draft "Local Maintenance Proposal" template for "YES" responses
 
 ## ⚙️ Backend & Automation
-- [ ] Set up Gmail App Passwords for `belletienne.trades@gmail.com`
-- [ ] Setup email automation for micro-audit delivery
+- [x] Set up Gmail App Passwords for `belletienne.trades@gmail.com`
+- [x] Setup email automation for micro-audit delivery (`send_email.py`)
 
 ## ✅ Completed Milestones
 - [x] Project Identity & Branding: Bell-Etienne "Digital Handyman"
