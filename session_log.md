@@ -1,12 +1,17 @@
 # session_log.md — Local Digital Caretaker
 
 ## CURRENT STATE
-We have completed the Execution Phase Steps 1 & 2. We have a verified list of 10 local prospects in North Hills with documented website failures (SSL issues, outdated copyright, broken pages). Contact details (owners and phone numbers) and custom pitch scripts are ready in `sales_call_list.md`.
+South Coast Aquatics preview site is fully rebuilt and live at https://belletiennetrades.github.io/bell-etienne/southcoast/ — ready to share with the prospect. Sales outreach to MEP Air and other North Hills prospects is still pending.
 
 ## PICK UP HERE
-1. **Refine South Coast Demo:** Fix the broken logo image link at `/southcoast/index.html` and condense the "Digital Handyman Upgrades" section to be more integrated.
+1. **Share South Coast Demo:** Send live preview link to Matt Warshaw (matt@southcoastaquatics.com, (805) 660-2082) and gauge interest.
 2. **Sales Outreach:** Send the first real "Technical Leak" email to MEP Air (Manuel Ortega).
 3. **Onboarding:** Draft the "Local Maintenance Proposal" template.
+
+### Session 4 — 2026-05-18 (Late evening)
+- **South Coast Rebuild:** Replaced the staged demo with a full, polished preview at `/southcoast/index.html` — inline SVG logo (no hotlink risk), preview ribbon replaces the tacked-on "Digital Handyman Upgrades" section, programs grid, mission/quote block, coaches strip, contact card with real phone/email/address, and full footer with social links.
+- **Design:** Inter + Playfair Display pairing, navy/blue/aqua/gold palette, mobile-first responsive, tap-to-call and SMS links throughout.
+- **Deployment:** Pushed (`c9c848f`) and confirmed live (HTTP 200) at https://belletiennetrades.github.io/bell-etienne/southcoast/.
 
 ### Session 3 — 2026-05-18 (Evening)
 - **GitHub Deployment:** Moved from Surge.sh to GitHub Pages: [https://belletiennetrades.github.io/bell-etienne/](https://belletiennetrades.github.io/bell-etienne/).

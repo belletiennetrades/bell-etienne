@@ -7,8 +7,9 @@
 - [x] Link local repo and push to GitHub
 - [x] **Fix GitHub Pages 404:** Enable "Pages" in GitHub Settings (Branch: `main`, Folder: `/root`)
 - [x] Verify live site at `https://belletiennetrades.github.io/bell-etienne/`
-- [ ] **South Coast Demo:** Refine demo at `/southcoast/index.html` (Fix logo, condense Handyman section)
+- [x] **South Coast Demo:** Refine demo at `/southcoast/index.html` (Fix logo, condense Handyman section) — rebuilt as full preview site, deployed
 - [x] Initial staging of South Coast demo at `/southcoast/index.html`
+- [ ] Share live demo with Matt Warshaw / South Coast Aquatics for feedback
 - [ ] Enhance UI/UX (Refine typography, mobile links, subtle accents)
 
 ## 📞 Sales & Outreach
