@@ -1,23 +1,41 @@
 # session_log.md — Local Digital Caretaker
 
 ## CURRENT STATE
-Two preview demo sites are live on GitHub Pages:
+Three preview demo sites are live on GitHub Pages:
 - **South Coast Aquatics:** https://belletiennetrades.github.io/bell-etienne/southcoast/
 - **Marc Wilmers Heating & Air:** https://belletiennetrades.github.io/bell-etienne/marcwilmers/
+- **RJ's Work Boots:** https://belletiennetrades.github.io/bell-etienne/rjsworkboots/
 
-Both are ready to share with their respective prospects. Sales outreach to MEP Air and other North Hills prospects is still pending.
+All three are ready to share with their respective prospects. Outreach pipeline still has a fresh 50-lead SFV "no-website" prospect list ready to mail to Charles + Chris — paused at the send step because the Gmail app password is not recoverable from current context.
 
 ## PICK UP HERE
-1. **Share Demos:**
+1. **📌 PINNED: Send 50-prospect SFV list** to charles@olinthus.com + trickstand@gmail.com (Chris). Subject already chosen: "SFV prospects — 50 detailers + handymen with no website". Body = full contents of `prospects_no_website.md`. Sender = belletienne.trades@gmail.com. Two paths to unblock:
+   - **A:** Charles pastes the Gmail app password in chat → I run `send_email.py` directly.
+   - **B (recommended):** I write `send_prospects.py` (reads body from the markdown, reads pw from `BELL_PW` env var); Charles runs it with `! BELL_PW='…' python3 send_prospects.py` so the password never enters Claude's context.
+2. **Share Demos:**
    - Send South Coast preview to Matt Warshaw (matt@southcoastaquatics.com, (805) 660-2082).
    - Send Marc Wilmers preview to (818) 517-6010 — Marc himself usually answers.
-2. **Sales Outreach:** Send the first real "Technical Leak" email to MEP Air (Manuel Ortega).
-3. **Onboarding:** Draft the "Local Maintenance Proposal" template.
-4. **Protocol Work (see Open Questions):** Formalize Discovery → Build → Deploy. Defer go-live protocol until first paying customer.
+   - Send RJ's Work Boots preview to (661) 259-1978 — Ryan or Joseph.
+3. **Sales Outreach:** Send the first real "Technical Leak" email to MEP Air (Manuel Ortega).
+4. **Onboarding:** Draft the "Local Maintenance Proposal" template.
+5. **Protocol Work (see Open Questions):** Formalize Discovery → Build → Deploy. Defer go-live protocol until first paying customer.
 
 ## OPEN QUESTIONS / PROTOCOLS TO DEFINE
 - **Prospect Demo Protocol (Discovery → Build → Deploy):** Both South Coast and Marc Wilmers were built ad-hoc this week. The shape is starting to repeat — research the prospect (Yelp/Google for owner, phone, services, reviews), build a preview at `/<slug>/index.html` modeled on the established template (inline-SVG logo, top preview ribbon, tap-to-call, full sections, Bell-Etienne footer stamp), add `!<slug>/` to `.gitignore` allowlist, commit & push. Worth writing this up as a checklist before the next 2-3 demos so it's repeatable instead of remembered.
 - **Go-Live Protocol:** Deferred until we have paying customers. Will cover: domain transfer/registration, DNS, SSL, redirect from old site, email/contact form wiring, analytics, ownership handoff, recurring caretaker setup. Not worth designing in the abstract — first real customer will define the real shape.
+
+### Session 7 — 2026-05-22
+- **RJ's Work Boots Demo Live:** Reviewed previously-built `rjsworkboots/index.html` (1651 lines, leather/brass/oxblood palette, Santa Clarita specialty boot shop — 27 brands, expert fitting). `.gitignore` was already allowlisted for the directory from a prior session. Committed (`6463004`), pushed to main, polled GitHub Pages until live (HTTP 200 on 3rd attempt). Now live at https://belletiennetrades.github.io/bell-etienne/rjsworkboots/.
+- **Demo count:** 3 (southcoast, marcwilmers, rjsworkboots). Protocol-formalization task in Open Questions now overdue — every demo so far has reused the same shape (preview ribbon, inline SVG logo, custom palette, tap-to-call, Bell-Etienne footer stamp).
+- **Outreach pipeline:** No change — 50-prospect email still blocked on Gmail app password, both share-the-demo tasks for South Coast and Marc Wilmers still pending.
+
+### Session 6 — 2026-05-18 → 2026-05-19 (Late evening)
+- **New Prospect List:** Compiled 50 SFV businesses with active Yelp listings but no discoverable website — 25 mobile detailers + 25 handymen. Two parallel research agents (general-purpose) each verified their 25; Yelp profile pages return HTTP 403 to fetchers, so verification was Google-search-based (reject if a proprietary `.com`/`.us`/`.co`/Square/Webflow surfaces). Bench rows and rejected-with-reason lists included.
+  - **Master:** `prospects_no_website.md` (50-row table, "strongest cold-call tier" callout, suggested pitch angle — opposite of the Caretaker pitch: "Yelp owns your leads, take them back").
+  - **Detail:** `prospects_no_website_detailers.md` (25 + 2 bonus + 17 rejects), `prospects_no_website_handymen.md` (25 + 10 bench + 22 rejects).
+  - **Caveats logged in each file:** phone numbers came from Google snippets not live Yelp pages (spot-check rows flagged); ~1-in-15 may turn out to have an obscure site missed; out-of-state area codes on detailer #11 (504), handyman #38 (267), #47 (412) need verification.
+- **Email Send (PAUSED):** Confirmed recipients (charles@olinthus.com + trickstand@gmail.com / Chris) and subject line. Search for the Gmail app password came up empty across env vars, `.claude/settings.local.json`, project files, and the recoverable jsonl transcripts in `~/.claude/projects/-home-charles-agents-bell-n-etienne/`. Session paused before send — see PICK UP HERE #1.
+- **Memory:** No new memory written this session (prospect-list workflow may be worth a memory next time it's repeated).
 
 ### Session 5 — 2026-05-18 (Afternoon)
 - **New Lead:** Marc Wilmers Heating & Air (Valencia/Santa Clarita) — sourced from Yelp (5.0★, 211 reviews, top 4% CA contractors per BuildZoom).

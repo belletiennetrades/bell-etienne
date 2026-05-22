@@ -10,12 +10,14 @@
 - [x] **South Coast Demo:** Refine demo at `/southcoast/index.html` (Fix logo, condense Handyman section) — rebuilt as full preview site, deployed
 - [x] Initial staging of South Coast demo at `/southcoast/index.html`
 - [x] **Marc Wilmers Demo:** Build full preview at `/marcwilmers/index.html` and deploy to GitHub Pages
+- [x] **RJ's Work Boots Demo:** Build full preview at `/rjsworkboots/index.html` and deploy to GitHub Pages
 - [ ] Share live demo with Matt Warshaw / South Coast Aquatics for feedback
 - [ ] Share live demo with Marc Wilmers — (818) 517-6010
+- [ ] Share live demo with RJ's Work Boots — (661) 259-1978
 - [ ] Enhance UI/UX (Refine typography, mobile links, subtle accents)
 
 ## 📋 Protocols (To Formalize)
-- [ ] **Prospect Demo Protocol (Discovery → Build → Deploy):** Write a repeatable checklist now that we have two demos under our belt — research inputs needed, template anchor file, palette/copy decisions, `.gitignore` allowlist step, commit/push steps, sharing message format.
+- [ ] **Prospect Demo Protocol (Discovery → Build → Deploy):** Write a repeatable checklist now that we have three demos under our belt — research inputs needed, template anchor file, palette/copy decisions, `.gitignore` allowlist step, commit/push steps, sharing message format.
 - [ ] **Go-Live Protocol:** Defer until first paying customer. Will cover domain handoff, DNS/SSL, redirects, contact form wiring, analytics, ownership transfer, recurring caretaker setup.
 
 ## 📞 Sales & Outreach
@@ -25,6 +27,9 @@
 - [x] Create `sales_tracker.md` to log call outcomes
 - [x] Draft "Digital Handyman" cold email template
 - [x] Send first cold email test to Chris Bell & liegev@gmail.com
+- [x] **Compile SFV "no website" prospect list (50 leads):** 25 mobile detailers + 25 handymen with active Yelp listings but no discoverable website. Saved to `prospects_no_website.md` (master) plus `prospects_no_website_detailers.md` and `prospects_no_website_handymen.md` (detail + rejects + bench).
+- [ ] **📌 PINNED: Email the 50-prospect list** to charles@olinthus.com + Chris (trickstand@gmail.com). Subject: "SFV prospects — 50 detailers + handymen with no website". Sender: belletienne.trades@gmail.com via `send_email.py`. **Blocker:** Gmail app password not stored anywhere accessible (not in env, settings, project files, or recoverable transcripts). On resume: either Charles pastes the app password, OR build a `send_prospects.py` wrapper that reads body from the markdown file and password from a `BELL_PW` env var so Charles can run it himself with `! BELL_PW='...' python3 ...`.
+- [ ] Spot-check phone numbers on flagged prospect rows before mass outreach (detailers #15, #16, #22; out-of-state area codes: detailers #11/504, handymen #38/267, #47/412)
 - [ ] Send first real cold email to a prospect (e.g., MEP Air Incorporation)
 - [ ] Conduct first batch of 10 calls/visits
 - [ ] Draft "Local Maintenance Proposal" template for "YES" responses
