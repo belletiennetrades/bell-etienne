@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RJ's Work Boots — Santa Clarita's specialty work boot shop. 27 brands, expert fitting, union discount, open 7 days. Red Wing, Thorogood, Danner, White's, Nick's, Haix, and more.">
+    <title>RJ's Work Boots | Santa Clarita Specialty Work Boots — Expert Fitting, 27 Brands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --leather: #6b3a1e;
+            --leather-dark: #4a2611;
+            --tobacco: #8a4f2a;
+            --oxblood: #6e1f24;
+            --charcoal: #1c1816;
+            --charcoal-2: #2a2421;
+            --brass: #b48b4a;
+            --brass-2: #8f6a32;
+            --cream: #f3ece1;
+            --cream-2: #ede3d2;
+            --ink: #1c1816;
+            --muted: #6b6058;
+            --line: #e2d8c8;
+            --white: #ffffff;
+            --rust: #c4661f;
+            --radius: 8px;
+            --shadow: 0 10px 30px rgba(28, 24, 22, 0.10);
+            --shadow-lg: 0 24px 60px rgba(28, 24, 22, 0.22);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Preview ribbon — Bell-Etienne attribution */
+        .preview-ribbon {
+            background: var(--charcoal);
+            color: #fff;
+            text-align: center;
+            padding: 9px 16px;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+        .preview-ribbon strong { color: var(--brass); font-weight: 700; }
+        .preview-ribbon a { text-decoration: underline; opacity: 0.85; }
+
+        /* Header */
+        header.site-header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: saturate(140%) blur(8px);
+            -webkit-backdrop-filter: saturate(140%) blur(8px);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            gap: 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+        }
+        .logo-text {
+            font-family: 'Bebas Neue', 'Oswald', sans-serif;
+            font-size: 1.55rem;
+            color: var(--leather-dark);
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+        .logo-text small {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.22em;
+            color: var(--brass-2);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+        nav.primary {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        nav.primary a {
+            font-weight: 500;
+            font-size: 0.92rem;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+        nav.primary a:hover { color: var(--leather); }
+        .nav-cta {
+            background: var(--leather);
+            color: #fff !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem !important;
+            transition: background 0.15s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            letter-spacing: 0.02em;
+        }
+        .nav-cta:hover { background: var(--leather-dark); transform: translateY(-1px); color: #fff !important; }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--leather-dark);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(180, 139, 74, 0.18), transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(110, 31, 36, 0.30), transparent 55%),
+                linear-gradient(135deg, var(--charcoal) 0%, var(--leather-dark) 55%, var(--charcoal-2) 100%);
+            color: #fff;
+            overflow: hidden;
+            padding: 96px 0 110px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 6px);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(180, 139, 74, 0.14);
+            border: 1px solid rgba(180, 139, 74, 0.38);
+            color: #ecd9b3;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+        .eyebrow .dot {
+            width: 6px; height: 6px;
+            background: var(--brass);
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.4rem, 5.4vw, 4rem);
+            line-height: 1.02;
+            font-weight: 700;
+            margin-bottom: 22px;
+            letter-spacing: -0.005em;
+            text-transform: uppercase;
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--brass);
+            font-weight: 700;
+        }
+        .hero p.lede {
+            font-size: 1.13rem;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            max-width: 560px;
+            line-height: 1.6;
+        }
+        .cta-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            letter-spacing: 0.02em;
+        }
+        .btn-primary {
+            background: var(--brass);
+            color: var(--charcoal);
+        }
+        .btn-primary:hover {
+            background: #c89b5a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(180, 139, 74, 0.42);
+        }
+        .btn-outline {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+        }
+        .btn .arrow { transition: transform 0.2s; }
+        .btn:hover .arrow { transform: translateX(3px); }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .stat .num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--brass);
+            line-height: 1;
+        }
+        .stat .label {
+            font-size: 0.78rem;
+            opacity: 0.78;
+            margin-top: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        /* Hero visual card */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 28px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+        }
+        .hero-card-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--brass);
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .hero-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+        }
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.95rem;
+        }
+        .hours-list li:last-child { border-bottom: none; }
+        .hours-list .day { opacity: 0.9; }
+        .hours-list .hrs {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.04em;
+            color: #ecd9b3;
+            font-weight: 500;
+        }
+        .hours-list .today {
+            background: rgba(180, 139, 74, 0.2);
+            color: var(--brass);
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        .hero-card .open-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.82rem;
+            color: #b8e6a5;
+            font-weight: 700;
+            margin-top: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .hero-card .open-now .pulse {
+            width: 8px; height: 8px;
+            background: #6ec64c;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(110, 198, 76, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(110, 198, 76, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(110, 198, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(110, 198, 76, 0); }
+        }
+
+        /* Trust strip */
+        .trust-strip {
+            background: var(--charcoal);
+            color: #fff;
+            padding: 22px 0;
+            border-bottom: 4px solid var(--brass);
+        }
+        .trust-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 110px;
+        }
+        .trust-item .top {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--brass);
+            letter-spacing: 0.02em;
+        }
+        .trust-item .bot {
+            font-size: 0.72rem;
+            opacity: 0.78;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .trust-item .stars { letter-spacing: 0.05em; }
+
+        /* Section common */
+        section.block { padding: 96px 0; }
+        section.block.alt { background: var(--cream); }
+        section.block.dark { background: var(--charcoal); color: #fff; }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 56px;
+            max-width: 740px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-eyebrow {
+            color: var(--brass-2);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-bottom: 14px;
+        }
+        section.block.dark .section-eyebrow { color: var(--brass); }
+        .section-head h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            color: var(--leather-dark);
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.005em;
+        }
+        section.block.dark .section-head h2 { color: #fff; }
+        .section-head p {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+        section.block.dark .section-head p { color: rgba(255,255,255,0.78); }
+
+        /* Why RJ's — three pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .pillar {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 36px 30px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .pillar::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--leather), var(--brass));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .pillar:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .pillar:hover::before { transform: scaleX(1); }
+        .pillar-icon {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, var(--leather), var(--tobacco));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            color: var(--brass);
+        }
+        .pillar h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.35rem;
+            color: var(--leather-dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+        }
+        .pillar p {
+            color: var(--muted);
+            font-size: 0.97rem;
+            line-height: 1.6;
+        }
+
+        /* Categories — shop by job */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .category {
+            border-radius: var(--radius);
+            padding: 32px 28px 30px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            min-height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+        .category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .category.cat-fire {
+            background: linear-gradient(140deg, #6e1f24, #8a2a1c 55%, #b04a1e);
+        }
+        .category.cat-steel {
+            background: linear-gradient(140deg, #2a2421, #4a2611 55%, #6b3a1e);
+        }
+        .category.cat-esd {
+            background: linear-gradient(140deg, #1a3942, #2b5560 55%, #3f7a85);
+        }
+        .category.cat-water {
+            background: linear-gradient(140deg, #1c2a3a, #2a4055 55%, #406385);
+        }
+        .category.cat-soft {
+            background: linear-gradient(140deg, #4a3220, #6b4628 55%, #8a5e36);
+        }
+        .category.cat-womens {
+            background: linear-gradient(140deg, #4a1e2a, #6b2a3c 55%, #8c3f56);
+        }
+        .category .cat-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.78;
+        }
+        .category h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin: 10px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            line-height: 1.05;
+        }
+        .category p {
+            font-size: 0.92rem;
+            opacity: 0.88;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .category .cat-cta {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--brass);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            transition: gap 0.2s;
+        }
+        .category:hover .cat-cta { gap: 11px; }
+        .category .cat-svg {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            width: 130px;
+            height: 130px;
+            opacity: 0.14;
+            pointer-events: none;
+        }
+
+        /* Brand strip */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .brand {
+            background: #fff;
+            padding: 28px 14px;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--leather-dark);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: background 0.15s, color 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            position: relative;
+        }
+        .brand:hover {
+            background: var(--cream);
+            color: var(--oxblood);
+        }
+        .brand.featured::after {
+            content: "★";
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 0.7rem;
+            color: var(--brass);
+        }
+        .brand-note {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .brand-note .star { color: var(--brass); }
+
+        /* Owner story */
+        .owner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .owner-copy h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+            color: var(--leather-dark);
+            line-height: 1.1;
+            margin-bottom: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.005em;
+        }
+        .owner-copy p {
+            color: var(--ink);
+            margin-bottom: 16px;
+            font-size: 1.03rem;
+            line-height: 1.7;
+        }
+        .owner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+        .owner-tag {
+            background: var(--cream);
+            color: var(--leather-dark);
+            border: 1px solid var(--line);
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+        .owner-visual {
+            background: linear-gradient(135deg, var(--leather-dark) 0%, var(--leather) 55%, var(--tobacco) 100%);
+            border-radius: 16px;
+            padding: 44px;
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .owner-visual::after {
+            content: "";
+            position: absolute;
+            top: -40%; right: -25%;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(180, 139, 74, 0.32), transparent 60%);
+        }
+        .owner-visual::before {
+            content: "RJ";
+            position: absolute;
+            bottom: -50px;
+            right: -10px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18rem;
+            color: rgba(255,255,255,0.06);
+            line-height: 0.85;
+            letter-spacing: -0.02em;
+        }
+        .owner-visual-inner {
+            position: relative;
+            z-index: 2;
+        }
+        .owner-quote {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.45rem;
+            line-height: 1.35;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        .owner-quote::before {
+            content: "\201C";
+            font-family: 'Bebas Neue', serif;
+            font-size: 5rem;
+            line-height: 0.5;
+            color: var(--brass);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .owner-attr {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.16);
+        }
+        .owner-attr .who {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .owner-attr .role {
+            font-size: 0.82rem;
+            opacity: 0.76;
+            letter-spacing: 0.05em;
+        }
+        .owner-badge {
+            width: 52px; height: 52px;
+            background: var(--brass);
+            color: var(--charcoal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
+
+        /* Reviews */
+        .reviews-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+        .review-summary {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 14px 22px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+        }
+        .review-summary .src {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: var(--leather-dark);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.92rem;
+        }
+        .review-summary .score {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--oxblood);
+        }
+        .review-summary .stars { color: var(--brass); font-size: 1rem; letter-spacing: 0.1em; }
+        .review-summary .ct { font-size: 0.82rem; color: var(--muted); }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .review {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .review:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        .review .quote-mark {
+            position: absolute;
+            top: 14px;
+            right: 22px;
+            font-family: 'Bebas Neue', serif;
+            font-size: 4rem;
+            color: var(--cream-2);
+            line-height: 0.8;
+        }
+        .review .stars {
+            color: var(--brass);
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+        .review p {
+            font-size: 1.02rem;
+            color: var(--ink);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .review .who {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+        .review .avatar {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--leather), var(--tobacco));
+            color: var(--brass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .review .name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--leather-dark);
+        }
+        .review .source {
+            font-size: 0.76rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* Visit Us */
+        .visit-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: stretch;
+        }
+        .visit-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        .visit-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.45rem;
+            color: var(--leather-dark);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            font-weight: 700;
+        }
+        .visit-row {
+            display: flex;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line);
+            align-items: flex-start;
+        }
+        .visit-row:last-of-type { border-bottom: none; }
+        .visit-row .v-icon {
+            width: 38px; height: 38px;
+            background: var(--cream);
+            color: var(--leather);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .visit-row .v-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--brass-2);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+        .visit-row .v-value {
+            font-size: 1rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .visit-row a.v-value {
+            color: var(--leather);
+            text-decoration: underline;
+            text-decoration-color: var(--cream-2);
+            text-underline-offset: 3px;
+        }
+        .visit-row a.v-value:hover { color: var(--oxblood); }
+        .parking-note {
+            background: var(--cream);
+            border-left: 3px solid var(--brass);
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin-top: 22px;
+            font-size: 0.9rem;
+            color: var(--leather-dark);
+            font-style: italic;
+        }
+
+        .visit-hours {
+            background: var(--leather-dark);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .visit-hours::before {
+            content: "";
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 360px; height: 360px;
+            background: radial-gradient(circle, rgba(180, 139, 74, 0.32), transparent 60%);
+            pointer-events: none;
+        }
+        .visit-hours h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.45rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            font-weight: 700;
+            position: relative;
+        }
+        .visit-hours .open-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(110, 198, 76, 0.15);
+            color: #b8e6a5;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .visit-hours .open-now .pulse {
+            width: 8px; height: 8px;
+            background: #6ec64c;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        .visit-hours-list {
+            list-style: none;
+            position: relative;
+        }
+        .visit-hours-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            font-size: 1rem;
+        }
+        .visit-hours-list li:last-child { border-bottom: none; }
+        .visit-hours-list .day { opacity: 0.9; }
+        .visit-hours-list .hrs {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.04em;
+            color: var(--brass);
+            font-weight: 500;
+        }
+        .visit-hours-list li.today {
+            background: rgba(180, 139, 74, 0.10);
+            margin: 0 -18px;
+            padding-left: 18px;
+            padding-right: 18px;
+            border-radius: 6px;
+        }
+        .visit-hours-list li.today .day { font-weight: 700; }
+
+        /* CTA band */
+        .cta-band {
+            background: linear-gradient(135deg, var(--oxblood) 0%, var(--leather-dark) 100%);
+            color: #fff;
+            padding: 70px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-band::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(180, 139, 74, 0.25), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(196, 102, 31, 0.20), transparent 55%);
+            pointer-events: none;
+        }
+        .cta-band-inner { position: relative; z-index: 1; }
+        .cta-band h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+        }
+        .cta-band p {
+            font-size: 1.08rem;
+            opacity: 0.88;
+            margin-bottom: 30px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-band .cta-group {
+            justify-content: center;
+        }
+        .cta-band .btn-primary {
+            background: var(--brass);
+            color: var(--charcoal);
+        }
+        .cta-band .btn-primary:hover { background: #c89b5a; }
+
+        /* Footer */
+        footer.site-footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.78);
+            padding: 64px 0 28px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 44px;
+            margin-bottom: 44px;
+        }
+        .footer-brand .logo-text { color: #fff; }
+        .footer-brand .logo-text small { color: var(--brass); }
+        .footer-brand p {
+            margin-top: 18px;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+        .footer-col h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--brass);
+            font-size: 0.86rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { padding: 6px 0; font-size: 0.93rem; }
+        .footer-col a { transition: color 0.15s; }
+        .footer-col a:hover { color: var(--brass); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.82rem;
+        }
+        .footer-bottom .be-stamp {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+        }
+        .footer-bottom .be-stamp strong { color: var(--brass); }
+        .footer-bottom .be-stamp a {
+            color: var(--brass);
+            text-decoration: underline;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, color 0.15s;
+        }
+        .footer-social a:hover { background: var(--brass); color: var(--charcoal); }
+
+        /* Mobile */
+        @media (max-width: 920px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+            .hero { padding: 64px 0 80px; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: 1fr 1fr; }
+            .brand-grid { grid-template-columns: repeat(3, 1fr); }
+            .owner-grid { grid-template-columns: 1fr; gap: 40px; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .visit-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+            nav.primary { display: none; }
+            .menu-toggle { display: block; }
+            section.block { padding: 64px 0; }
+            .hero-stats { gap: 28px; }
+            .stat .num { font-size: 1.7rem; }
+        }
+        @media (max-width: 560px) {
+            .categories-grid { grid-template-columns: 1fr; }
+            .brand-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; }
+            .trust-row { gap: 14px; }
+            .trust-item { min-width: 92px; }
+            .trust-item .top { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Preview ribbon -->
+<div class="preview-ribbon">
+    <strong>PREVIEW DESIGN</strong> &nbsp;·&nbsp; Built by <strong>Bell-Etienne</strong> for RJ's Work Boots &nbsp;·&nbsp; <a href="tel:6612591978">call (661) 259-1978</a>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="#top" class="logo">
+            <!-- Inline boot SVG mark -->
+            <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="RJ's Work Boots">
+                <defs>
+                    <linearGradient id="bootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8a4f2a"/>
+                        <stop offset="100%" stop-color="#4a2611"/>
+                    </linearGradient>
+                </defs>
+                <!-- Boot silhouette -->
+                <path d="M18 8 L18 36 L14 38 L12 44 L12 50 L54 50 L54 44 L42 42 L36 36 L36 8 Z"
+                      fill="url(#bootGrad)" stroke="#1c1816" stroke-width="1.4" stroke-linejoin="round"/>
+                <!-- Sole detail -->
+                <rect x="11" y="49" width="44" height="5" fill="#1c1816" rx="1.5"/>
+                <!-- Lace eyelets -->
+                <circle cx="22" cy="14" r="1.3" fill="#b48b4a"/>
+                <circle cx="22" cy="20" r="1.3" fill="#b48b4a"/>
+                <circle cx="22" cy="26" r="1.3" fill="#b48b4a"/>
+                <circle cx="32" cy="14" r="1.3" fill="#b48b4a"/>
+                <circle cx="32" cy="20" r="1.3" fill="#b48b4a"/>
+                <circle cx="32" cy="26" r="1.3" fill="#b48b4a"/>
+                <!-- Lace lines -->
+                <path d="M22 14 L32 20 M22 20 L32 26 M22 26 L32 14" stroke="#b48b4a" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+                <!-- Top stitching -->
+                <path d="M18 9 L36 9" stroke="#b48b4a" stroke-width="0.6" stroke-dasharray="1.5 1.5"/>
+            </svg>
+            <div class="logo-text">
+                RJ's Work Boots
+                <small>Santa Clarita · Est. 2020</small>
+            </div>
+        </a>
+        <nav class="primary">
+            <a href="#shop">Shop</a>
+            <a href="#brands">Brands</a>
+            <a href="#why">Why RJ's</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#visit">Visit</a>
+            <a href="tel:6612591978" class="nav-cta">📞 (661) 259-1978</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <span class="eyebrow"><span class="dot"></span>Santa Clarita's Specialty Work Boot Shop</span>
+            <h1>Work boots that fit the job<br><em>— and your foot.</em></h1>
+            <p class="lede">
+                Twenty-seven brands. Real fitting expertise. Boots the chain stores don't carry — White's, Nick's, Haix, Danner, Thorogood — alongside the names you already trust. Stop in, get sized properly, walk out with boots that earn their wear.
+            </p>
+            <div class="cta-group">
+                <a href="tel:6612591978" class="btn btn-primary">Call (661) 259-1978 <span class="arrow">→</span></a>
+                <a href="#visit" class="btn btn-outline">Visit the Store</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="num">27</div>
+                    <div class="label">Brands Stocked</div>
+                </div>
+                <div class="stat">
+                    <div class="num">5.0★</div>
+                    <div class="label">Yelp Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="num">7</div>
+                    <div class="label">Days a Week</div>
+                </div>
+                <div class="stat">
+                    <div class="num">2020</div>
+                    <div class="label">Owner-Operated</div>
+                </div>
+            </div>
+        </div>
+        <aside class="hero-card">
+            <div class="hero-card-label">Store Hours</div>
+            <h3>Open 7 Days. Free Parking.</h3>
+            <ul class="hours-list">
+                <li><span class="day">Monday – Friday</span><span class="hrs">9:30a – 7p</span></li>
+                <li><span class="day">Saturday</span><span class="hrs">9:30a – 6p</span></li>
+                <li><span class="day">Sunday</span><span class="hrs">10:30a – 6p</span></li>
+            </ul>
+            <div class="open-now"><span class="pulse"></span>Open Now</div>
+        </aside>
+    </div>
+</section>
+
+<!-- Trust strip -->
+<section class="trust-strip">
+    <div class="container trust-row">
+        <div class="trust-item">
+            <div class="top stars">★★★★★</div>
+            <div class="bot">5.0 on Yelp</div>
+        </div>
+        <div class="trust-item">
+            <div class="top">4.7★</div>
+            <div class="bot">164 Google Reviews</div>
+        </div>
+        <div class="trust-item">
+            <div class="top">27</div>
+            <div class="bot">Brands Stocked</div>
+        </div>
+        <div class="trust-item">
+            <div class="top">UNION</div>
+            <div class="bot">Discount Honored</div>
+        </div>
+        <div class="trust-item">
+            <div class="top">7 DAYS</div>
+            <div class="bot">Open Every Week</div>
+        </div>
+    </div>
+</section>
+
+<!-- Why RJ's -->
+<section class="block" id="why">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Why RJ's</div>
+            <h2>The Boot Shop That Still Knows How to Size a Foot</h2>
+            <p>Big-box stores guess. Online retailers ship and pray. We measure, talk through the job you actually do, and pair you with the boot that will hold up. That's the only reason a specialty shop survives.</p>
+        </div>
+        <div class="pillars-grid">
+            <article class="pillar">
+                <div class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12h2l2-7 4 14 3-11 3 9 2-5h2"/>
+                    </svg>
+                </div>
+                <h3>Expert Fitting</h3>
+                <p>We measure your foot the right way, walk you through stretch points, and tell you which sock will keep you from blistering. Hard-to-fit feet are our specialty — most customers find us after their last pair didn't work.</p>
+            </article>
+            <article class="pillar">
+                <div class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="6"/>
+                        <path d="M15.5 12.5 17 22l-5-3-5 3 1.5-9.5"/>
+                    </svg>
+                </div>
+                <h3>Brands the Chains Don't Carry</h3>
+                <p>White's, Nick's, Haix, Danner — the Pacific Northwest boot-makers serious tradespeople and wildland firefighters ask for by name. Stocked locally so you can try them on before you spend $400.</p>
+            </article>
+            <article class="pillar">
+                <div class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 12V4a2 2 0 0 0-4 0v8"/>
+                        <path d="M6 12h12l1 9H5z"/>
+                    </svg>
+                </div>
+                <h3>Built for the Job You Actually Do</h3>
+                <p>Wildland fire. Union construction. Warehouse. Electrical. Oil &amp; gas. We stock by hazard — composite toe, ESD, puncture-resistant, waterproof — and we ask what you do before we hand you a box.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Shop by Category -->
+<section class="block alt" id="shop">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Shop by Job</div>
+            <h2>Find Your Boot by What You Do</h2>
+            <p>Tell us the work and we'll pull the right wall. Click a category to browse — or come in and we'll walk it with you.</p>
+        </div>
+        <div class="categories-grid">
+            <a href="#" class="category cat-fire">
+                <div>
+                    <div class="cat-tag">Wildland · Hotshot · Brush</div>
+                    <h3>Wildland Fire</h3>
+                    <p>NFPA-rated 8" and 10" lace-ups. White's, Nick's, Haix Airpower. Fire-resistant laces in stock.</p>
+                </div>
+                <span class="cat-cta">Shop wildland <span>→</span></span>
+            </a>
+            <a href="#" class="category cat-steel">
+                <div>
+                    <div class="cat-tag">Construction · Industrial</div>
+                    <h3>Steel &amp; Composite Toe</h3>
+                    <p>ASTM-rated protection for jobsite trades. Red Wing, Thorogood, Timberland Pro, Carolina.</p>
+                </div>
+                <span class="cat-cta">Shop safety toe <span>→</span></span>
+            </a>
+            <a href="#" class="category cat-esd">
+                <div>
+                    <div class="cat-tag">Electrical · Static-Sensitive</div>
+                    <h3>ESD &amp; EH Rated</h3>
+                    <p>Electrostatic dissipative and electrical hazard footwear for electricians, techs, and clean rooms.</p>
+                </div>
+                <span class="cat-cta">Shop ESD/EH <span>→</span></span>
+            </a>
+            <a href="#" class="category cat-water">
+                <div>
+                    <div class="cat-tag">Outdoor · Plumbing · Concrete</div>
+                    <h3>Waterproof</h3>
+                    <p>Sealed-seam construction from Danner, Irish Setter, Georgia, Keen Utility. Stay dry. Stay working.</p>
+                </div>
+                <span class="cat-cta">Shop waterproof <span>→</span></span>
+            </a>
+            <a href="#" class="category cat-soft">
+                <div>
+                    <div class="cat-tag">All-Day Comfort</div>
+                    <h3>Soft Toe</h3>
+                    <p>For trades that don't require safety toe. Premium leather, broken-in feel, made to last.</p>
+                </div>
+                <span class="cat-cta">Shop soft toe <span>→</span></span>
+            </a>
+            <a href="#" class="category cat-womens">
+                <div>
+                    <div class="cat-tag">Women's Work</div>
+                    <h3>Women's Boots</h3>
+                    <p>Built on women's lasts — not shrunken men's shells. Soft toe and safety toe options stocked.</p>
+                </div>
+                <span class="cat-cta">Shop women's <span>→</span></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Brand strip -->
+<section class="block" id="brands">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Brands We Stock</div>
+            <h2>27 Brands. One Wall You Can Actually Touch.</h2>
+            <p>From the names you grew up wearing to the PNW boot-makers most stores don't bother with. If we don't have it on the wall, we'll tell you straight.</p>
+        </div>
+        <div class="brand-grid">
+            <div class="brand featured">Red Wing</div>
+            <div class="brand featured">Thorogood</div>
+            <div class="brand featured">Danner</div>
+            <div class="brand featured">White's</div>
+            <div class="brand featured">Nick's</div>
+            <div class="brand featured">Haix</div>
+            <div class="brand">Ariat</div>
+            <div class="brand">Belleville</div>
+            <div class="brand">Carhartt</div>
+            <div class="brand">Carolina</div>
+            <div class="brand">Caterpillar</div>
+            <div class="brand">Chinook</div>
+            <div class="brand">Durango</div>
+            <div class="brand">Florsheim</div>
+            <div class="brand">Genuine Grip</div>
+            <div class="brand">Georgia Boot</div>
+            <div class="brand">Irish Setter</div>
+            <div class="brand">Keen Utility</div>
+            <div class="brand">Mellow Walk</div>
+            <div class="brand">NEOS</div>
+            <div class="brand">Puma Safety</div>
+            <div class="brand">RedBack</div>
+            <div class="brand">Reebok Work</div>
+            <div class="brand">Rockport Work</div>
+            <div class="brand">Timberland Pro</div>
+            <div class="brand">Wolverine</div>
+            <div class="brand">+ Accessories</div>
+        </div>
+        <p class="brand-note"><span class="star">★</span> Featured brands stocked deep — call to confirm size and width before you drive over.</p>
+    </div>
+</section>
+
+<!-- Owner story -->
+<section class="block alt" id="owners">
+    <div class="container">
+        <div class="owner-grid">
+            <div class="owner-copy">
+                <div class="section-eyebrow">Meet R + J</div>
+                <h2>The Owners Are Behind the Counter</h2>
+                <p>Ryan and Joseph opened RJ's in December 2020 with one idea: bring back the specialty boot shop. The kind where the owner measures your foot, asks what you do, and won't sell you the wrong boot just because it's on the shelf.</p>
+                <p>Five years in, both are still on the floor most days. You'll usually find Ryan sizing wildland firefighters in the back wall, or Joseph talking a union ironworker through whether he really needs a 10" or an 8". The names are right there on the door.</p>
+                <p>It's a small store. That's on purpose. Every boot on the wall earned its spot.</p>
+                <div class="owner-tags">
+                    <span class="owner-tag">Owner-operated since 2020</span>
+                    <span class="owner-tag">Union discount honored</span>
+                    <span class="owner-tag">Hard-to-fit specialists</span>
+                    <span class="owner-tag">Wildland fire community</span>
+                </div>
+            </div>
+            <div class="owner-visual">
+                <div class="owner-visual-inner">
+                    <div class="owner-quote">
+                        They showed me what boots to pick for wildland, helped size my foot, showed me how to tie them and what socks to buy so I don't get blisters. 10/10.
+                    </div>
+                    <div class="owner-attr">
+                        <div class="owner-badge">OP</div>
+                        <div>
+                            <div class="who">O.G P. — Wildland firefighter</div>
+                            <div class="role">5★ Yelp review · March 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section class="block" id="reviews">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">What Customers Say</div>
+            <h2>Five-Star Reviews from People Who Stand for a Living</h2>
+        </div>
+        <div class="reviews-head">
+            <div class="review-summary">
+                <span class="src">Yelp</span>
+                <span class="score">5.0</span>
+                <span class="stars">★★★★★</span>
+                <span class="ct">26 reviews</span>
+            </div>
+            <div class="review-summary">
+                <span class="src">Google</span>
+                <span class="score">4.7</span>
+                <span class="stars">★★★★★</span>
+                <span class="ct">164 reviews</span>
+            </div>
+        </div>
+        <div class="reviews-grid">
+            <article class="review">
+                <span class="quote-mark">"</span>
+                <div class="stars">★★★★★</div>
+                <p>Joe and Brock were so incredibly helpful. Wonderful customer service! Nice selection of work boots.</p>
+                <div class="who">
+                    <div class="avatar">JS</div>
+                    <div>
+                        <div class="name">Janean S.</div>
+                        <div class="source">Yelp · April 2026</div>
+                    </div>
+                </div>
+            </article>
+            <article class="review">
+                <span class="quote-mark">"</span>
+                <div class="stars">★★★★★</div>
+                <p>This place is a gem! Customer service is exceptional — these guys really know what they are talking about!</p>
+                <div class="who">
+                    <div class="avatar">TY</div>
+                    <div>
+                        <div class="name">Tiffany Y.</div>
+                        <div class="source">Yelp · March 2026</div>
+                    </div>
+                </div>
+            </article>
+            <article class="review">
+                <span class="quote-mark">"</span>
+                <div class="stars">★★★★★</div>
+                <p>They give discounts to union workers and they have great customer service. Best boot shop in the valley.</p>
+                <div class="who">
+                    <div class="avatar">MM</div>
+                    <div>
+                        <div class="name">Marisol M.</div>
+                        <div class="source">Google</div>
+                    </div>
+                </div>
+            </article>
+            <article class="review">
+                <span class="quote-mark">"</span>
+                <div class="stars">★★★★★</div>
+                <p>Free parking and no pressure sales. Personalized service and pricing competitive with online retailers.</p>
+                <div class="who">
+                    <div class="avatar">LS</div>
+                    <div>
+                        <div class="name">Len S.</div>
+                        <div class="source">Google</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Visit Us -->
+<section class="block alt" id="visit">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow">Find Us</div>
+            <h2>On Lyons Avenue in Old Town Newhall</h2>
+            <p>Easy off the 14. Free parking out front. No pressure. Bring your work socks.</p>
+        </div>
+        <div class="visit-grid">
+            <div class="visit-card">
+                <h3>Store Info</h3>
+                <div class="visit-row">
+                    <div class="v-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <div class="v-label">Address</div>
+                        <a class="v-value" href="https://maps.google.com/?q=24012+Lyons+Ave,+Santa+Clarita,+CA+91321" target="_blank" rel="noopener">24012 Lyons Ave<br>Santa Clarita, CA 91321</a>
+                    </div>
+                </div>
+                <div class="visit-row">
+                    <div class="v-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <div class="v-label">Phone</div>
+                        <a class="v-value" href="tel:6612591978">(661) 259-1978</a>
+                    </div>
+                </div>
+                <div class="visit-row">
+                    <div class="v-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <div>
+                        <div class="v-label">Instagram</div>
+                        <a class="v-value" href="https://instagram.com/rjsworkboots" target="_blank" rel="noopener">@rjsworkboots</a>
+                    </div>
+                </div>
+                <div class="parking-note">
+                    "Free parking and no pressure sales." — that's how our customers describe us, and we'd like to keep it that way.
+                </div>
+            </div>
+            <aside class="visit-hours">
+                <h3>Today's Hours</h3>
+                <div class="open-now"><span class="pulse"></span>Open Now</div>
+                <ul class="visit-hours-list">
+                    <li><span class="day">Monday</span><span class="hrs">9:30a – 7p</span></li>
+                    <li><span class="day">Tuesday</span><span class="hrs">9:30a – 7p</span></li>
+                    <li><span class="day">Wednesday</span><span class="hrs">9:30a – 7p</span></li>
+                    <li><span class="day">Thursday</span><span class="hrs">9:30a – 7p</span></li>
+                    <li><span class="day">Friday</span><span class="hrs">9:30a – 7p</span></li>
+                    <li><span class="day">Saturday</span><span class="hrs">9:30a – 6p</span></li>
+                    <li><span class="day">Sunday</span><span class="hrs">10:30a – 6p</span></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band">
+    <div class="container cta-band-inner">
+        <h2>Stop by Lyons Avenue — or call before you drive over.</h2>
+        <p>We'll tell you straight whether we've got your size, your width, and the boot for your job. No guessing. No shipping. No sending it back.</p>
+        <div class="cta-group">
+            <a href="tel:6612591978" class="btn btn-primary">📞 Call (661) 259-1978 <span class="arrow">→</span></a>
+            <a href="https://maps.google.com/?q=24012+Lyons+Ave,+Santa+Clarita,+CA+91321" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M18 8 L18 36 L14 38 L12 44 L12 50 L54 50 L54 44 L42 42 L36 36 L36 8 Z" fill="#6b3a1e" stroke="#b48b4a" stroke-width="1.4" stroke-linejoin="round"/>
+                        <rect x="11" y="49" width="44" height="5" fill="#1c1816" rx="1.5"/>
+                        <circle cx="22" cy="14" r="1.3" fill="#b48b4a"/>
+                        <circle cx="22" cy="20" r="1.3" fill="#b48b4a"/>
+                        <circle cx="22" cy="26" r="1.3" fill="#b48b4a"/>
+                        <circle cx="32" cy="14" r="1.3" fill="#b48b4a"/>
+                        <circle cx="32" cy="20" r="1.3" fill="#b48b4a"/>
+                        <circle cx="32" cy="26" r="1.3" fill="#b48b4a"/>
+                    </svg>
+                    <div class="logo-text">
+                        RJ's Work Boots
+                        <small>Santa Clarita · Est. 2020</small>
+                    </div>
+                </div>
+                <p>Santa Clarita's specialty work boot shop. 27 brands stocked. Expert fitting. Owner-operated since 2020. Built for the trades that built this valley.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Men's</a></li>
+                    <li><a href="#">Women's</a></li>
+                    <li><a href="#">Wildland Fire</a></li>
+                    <li><a href="#">Safety Toe</a></li>
+                    <li><a href="#">Waterproof</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Visit</h4>
+                <ul>
+                    <li>24012 Lyons Ave</li>
+                    <li>Santa Clarita, CA 91321</li>
+                    <li><a href="tel:6612591978">(661) 259-1978</a></li>
+                    <li>Mon–Fri 9:30a–7p</li>
+                    <li>Sat 9:30a–6p</li>
+                    <li>Sun 10:30a–6p</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://instagram.com/rjsworkboots" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://maps.google.com/?q=24012+Lyons+Ave,+Santa+Clarita,+CA+91321" target="_blank" rel="noopener">Google Maps</a></li>
+                    <li><a href="https://www.yelp.com/biz/rjs-work-boots-santa-clarita" target="_blank" rel="noopener">Yelp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 RJ's Work Boots. All rights reserved.</div>
+            <div class="footer-social">
+                <a href="https://instagram.com/rjsworkboots" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+            <div class="be-stamp">
+                <strong>PREVIEW</strong> · Design concept by <a href="https://belletiennetrades.github.io/bell-etienne/" target="_blank" rel="noopener">Bell-Etienne</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
