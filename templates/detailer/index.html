@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<!--
+    MOBILE DETAILER TEMPLATE — Bell-Etienne
+    Swap points (search for "TEMPLATE:"):
+      - TEMPLATE:business-name     wordmark + footer + meta
+      - TEMPLATE:phone             tel: links + display
+      - TEMPLATE:email             contact form action + display
+      - TEMPLATE:address           service area + footer
+      - TEMPLATE:booking-url       online booking button href
+      - TEMPLATE:payment-url       payment button href
+      - TEMPLATE:cities            service area city list
+      - TEMPLATE:gallery           before/after image src (replace SVG placeholders)
+      - TEMPLATE:pricing           package prices
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TEMPLATE:business-name -->
+    <meta name="description" content="Detail Co. — premium mobile auto detailing. We come to you. Hand wash, paint correction, interior, ceramic.">
+    <title>Detail Co. | Premium Mobile Auto Detailing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --jet: #0a0a0a;
+            --jet-2: #161616;
+            --jet-3: #1f1f1f;
+            --cyan: #00c8e6;
+            --cyan-2: #00a5bf;
+            --chrome: #c5cbd3;
+            --ash: #8a9099;
+            --line: #2a2a2a;
+            --line-soft: #e6e9ee;
+            --ink: #111418;
+            --muted: #5b6675;
+            --cream: #f7f8fa;
+            --white: #ffffff;
+            --radius: 10px;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img, svg { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Preview ribbon */
+        .preview-ribbon {
+            background: var(--jet);
+            color: var(--chrome);
+            font-size: 0.78rem;
+            text-align: center;
+            padding: 8px 16px;
+            letter-spacing: 0.05em;
+        }
+        .preview-ribbon a {
+            color: var(--cyan);
+            font-weight: 700;
+            border-bottom: 1px dotted var(--cyan);
+        }
+
+        /* Header */
+        header.site {
+            background: var(--jet);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            gap: 20px;
+        }
+        .wordmark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        .wordmark .mark {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: var(--jet);
+            box-shadow: 0 4px 14px rgba(0, 200, 230, 0.35);
+        }
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--chrome);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .nav-links a:hover { color: var(--cyan); }
+        .nav-cta {
+            background: var(--cyan);
+            color: var(--jet);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-cta:hover { background: var(--cyan-2); color: var(--white); }
+
+        @media (max-width: 780px) {
+            .nav-links { display: none; }
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--jet);
+            color: var(--white);
+            padding: 90px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 75% 30%, rgba(0, 200, 230, 0.18), transparent 55%),
+                radial-gradient(circle at 20% 80%, rgba(0, 200, 230, 0.08), transparent 60%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border: 1px solid rgba(0, 200, 230, 0.4);
+            border-radius: 40px;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: -0.005em;
+        }
+        .hero h1 .accent { color: var(--cyan); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--chrome);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.92rem;
+        }
+        .btn-primary {
+            background: var(--cyan);
+            color: var(--jet);
+            box-shadow: 0 4px 16px rgba(0, 200, 230, 0.3);
+        }
+        .btn-primary:hover { background: var(--cyan-2); color: var(--white); transform: translateY(-2px); }
+        .btn-ghost {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+        /* Hero side card — quick stats */
+        .hero-card {
+            background: linear-gradient(160deg, var(--jet-2), var(--jet-3));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 20px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--chrome);
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-row .label { font-size: 0.9rem; }
+        .stat-row .value {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        @media (max-width: 780px) {
+            .hero { padding: 60px 0 70px; }
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* Sections */
+        section.block { padding: 90px 0; }
+        section.block.dark { background: var(--jet); color: var(--white); }
+        section.block.alt { background: var(--cream); }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        .section-head h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+            text-transform: uppercase;
+            letter-spacing: -0.005em;
+        }
+        section.block:not(.dark) .section-head h2 { color: var(--jet); }
+        .section-head p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 16px auto 0;
+            font-size: 1.05rem;
+        }
+        section.block.dark .section-head p { color: var(--chrome); }
+
+        /* Packages & pricing */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .pkg {
+            background: var(--white);
+            border: 1px solid var(--line-soft);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .pkg:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: var(--cyan);
+        }
+        .pkg.featured {
+            background: linear-gradient(160deg, var(--jet), var(--jet-2));
+            color: var(--white);
+            border-color: var(--cyan);
+            box-shadow: 0 12px 40px rgba(0, 200, 230, 0.18);
+        }
+        .pkg-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--cyan);
+            color: var(--jet);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 4px 14px;
+            border-radius: 30px;
+        }
+        .pkg h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+        .pkg .sub {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .pkg.featured .sub { color: var(--chrome); }
+        .pkg .price {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .pkg .price .currency {
+            font-size: 1.2rem;
+            vertical-align: top;
+            margin-right: 2px;
+            color: var(--cyan);
+        }
+        .pkg .duration {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+        .pkg.featured .duration { color: var(--chrome); }
+        .pkg ul {
+            list-style: none;
+            margin-bottom: 28px;
+            padding: 0;
+        }
+        .pkg li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.93rem;
+        }
+        .pkg li::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            background: rgba(0, 200, 230, 0.15);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300c8e6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 3px;
+        }
+        .pkg .btn-pkg {
+            display: block;
+            text-align: center;
+            background: var(--jet);
+            color: var(--white);
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .pkg.featured .btn-pkg {
+            background: var(--cyan);
+            color: var(--jet);
+        }
+        .pkg .btn-pkg:hover { background: var(--cyan-2); color: var(--white); }
+        .pkg.featured .btn-pkg:hover { background: var(--white); color: var(--jet); }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .ba-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--jet-2);
+        }
+        .ba-img {
+            aspect-ratio: 1 / 1;
+            position: relative;
+            background: linear-gradient(135deg, #4a4f57, #2a2e34);
+            display: grid;
+            place-items: center;
+            color: var(--chrome);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+        }
+        .ba-img.after {
+            background: linear-gradient(135deg, #00637a, #003d4a);
+            color: var(--white);
+        }
+        .ba-img::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--cyan);
+        }
+        .ba-caption {
+            grid-column: span 2;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            color: var(--chrome);
+            font-weight: 600;
+            background: var(--jet-2);
+            border-top: 1px solid var(--line);
+        }
+
+        /* CTA strip */
+        .cta-strip {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .cta-card {
+            padding: 44px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .cta-card.book {
+            background: linear-gradient(160deg, var(--jet), var(--jet-2));
+            color: var(--white);
+            border: 1px solid var(--line);
+        }
+        .cta-card.pay {
+            background: linear-gradient(160deg, var(--cyan), var(--cyan-2));
+            color: var(--jet);
+        }
+        .cta-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.04em;
+        }
+        .cta-card p {
+            margin-bottom: 24px;
+            opacity: 0.85;
+        }
+        .cta-card .btn-big {
+            background: var(--cyan);
+            color: var(--jet);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.9rem;
+        }
+        .cta-card.pay .btn-big {
+            background: var(--jet);
+            color: var(--white);
+        }
+        .cta-card .btn-big:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+        @media (max-width: 700px) {
+            .cta-strip { grid-template-columns: 1fr; }
+        }
+
+        /* Add-ons */
+        .addons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .addon {
+            background: var(--jet-2);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .addon:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+        }
+        .addon-info h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+        .addon-info p {
+            font-size: 0.88rem;
+            color: var(--chrome);
+            line-height: 1.4;
+        }
+        .addon-price {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--cyan);
+            white-space: nowrap;
+        }
+
+        /* Service area */
+        .area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .area-map {
+            aspect-ratio: 4 / 3;
+            background: var(--jet-2);
+            border-radius: var(--radius);
+            border: 1px solid var(--line-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        .area-map svg { width: 100%; height: 100%; }
+        .area h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            color: var(--jet);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 10px;
+        }
+        .cities {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .cities li {
+            background: var(--white);
+            border: 1px solid var(--line-soft);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cities li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--cyan);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 780px) {
+            .area { grid-template-columns: 1fr; }
+        }
+
+        /* Contact */
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info {
+            background: var(--jet);
+            color: var(--white);
+            padding: 44px;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+        }
+        .contact-info h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .contact-info .row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .contact-info .row .icon {
+            color: var(--cyan);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .contact-info a:hover { color: var(--cyan); }
+
+        form.contact {
+            display: grid;
+            gap: 14px;
+        }
+        form.contact label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: -10px;
+        }
+        form.contact input,
+        form.contact textarea,
+        form.contact select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--line-soft);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--ink);
+        }
+        form.contact textarea { min-height: 130px; resize: vertical; }
+        form.contact input:focus,
+        form.contact textarea:focus,
+        form.contact select:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(0, 200, 230, 0.18);
+        }
+        form.contact button {
+            background: var(--cyan);
+            color: var(--jet);
+            border: none;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        form.contact button:hover { background: var(--cyan-2); color: var(--white); }
+
+        @media (max-width: 780px) {
+            .contact-wrap { grid-template-columns: 1fr; }
+        }
+
+        /* Footer */
+        footer.site {
+            background: #000;
+            color: rgba(255,255,255,0.55);
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+        }
+        footer.site .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .stamp {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            font-size: 0.8rem;
+        }
+        .stamp a {
+            color: var(--cyan);
+            font-weight: 600;
+            border-bottom: 1px dotted var(--cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview ribbon — remove when deploying to client domain -->
+    <div class="preview-ribbon">
+        Preview built by <a href="https://bell-etienne.surge.sh" target="_blank" rel="noopener">Bell-Etienne</a> — Digital Handyman for the Trades
+    </div>
+
+    <header class="site">
+        <div class="container nav">
+            <a href="#" class="wordmark">
+                <span class="mark">
+                    <!-- Sparkle / shine mark -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.4L19 9l-4.5 3.3L16 18l-4-2.8L8 18l1.5-5.7L5 9l5.2-1.6L12 2z"/></svg>
+                </span>
+                <!-- TEMPLATE:business-name -->
+                Detail&nbsp;Co.
+            </a>
+            <nav class="nav-links">
+                <a href="#packages">Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#addons">Add-Ons</a>
+                <a href="#area">Service Area</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <!-- TEMPLATE:phone -->
+            <a href="tel:5555550100" class="nav-cta">Book Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div>
+                <span class="hero-eyebrow">Mobile Detailing &middot; We come to you</span>
+                <h1>Showroom shine.<br><span class="accent">Driveway service.</span></h1>
+                <p>Hand-wash, paint correction, interior deep cleans, and ceramic protection &mdash; performed at your home or office with all the water and power we need.</p>
+                <div class="hero-cta">
+                    <!-- TEMPLATE:booking-url -->
+                    <a href="#booking" class="btn btn-primary">Book a Detail &rarr;</a>
+                    <!-- TEMPLATE:phone -->
+                    <a href="tel:5555550100" class="btn btn-ghost">Call (555) 555-0100</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>At a glance</h3>
+                <div class="stat-row">
+                    <span class="label">Years detailing</span>
+                    <span class="value">10+</span>
+                </div>
+                <div class="stat-row">
+                    <span class="label">Vehicles done</span>
+                    <span class="value">2,400+</span>
+                </div>
+                <div class="stat-row">
+                    <span class="label">Avg. rating</span>
+                    <span class="value">4.9 / 5</span>
+                </div>
+                <div class="stat-row">
+                    <span class="label">Service window</span>
+                    <span class="value">7&ndash;7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="packages">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Pick your level</div>
+                <h2>Packages &amp; Pricing</h2>
+                <p>Flat-rate detailing. No hidden fees. Cars, trucks, and SUVs &mdash; oversized vehicles add $25.</p>
+            </div>
+            <div class="packages">
+                <div class="pkg">
+                    <h3>Express</h3>
+                    <div class="sub">Wash &amp; quick interior</div>
+                    <!-- TEMPLATE:pricing -->
+                    <div class="price"><span class="currency">$</span>89</div>
+                    <div class="duration">~ 1 hour</div>
+                    <ul>
+                        <li>Foam hand wash &amp; rinse</li>
+                        <li>Wheels, tires, door jambs</li>
+                        <li>Interior vacuum</li>
+                        <li>Windows &amp; dash wipe-down</li>
+                        <li>Tire shine</li>
+                    </ul>
+                    <!-- TEMPLATE:booking-url -->
+                    <a href="#booking" class="btn-pkg">Book Express</a>
+                </div>
+                <div class="pkg featured">
+                    <span class="pkg-tag">Most popular</span>
+                    <h3>Full Detail</h3>
+                    <div class="sub">Inside-out reset</div>
+                    <!-- TEMPLATE:pricing -->
+                    <div class="price"><span class="currency">$</span>199</div>
+                    <div class="duration">~ 3 hours</div>
+                    <ul>
+                        <li>Everything in Express</li>
+                        <li>Clay bar &amp; spray sealant</li>
+                        <li>Interior shampoo &amp; steam</li>
+                        <li>Leather conditioning</li>
+                        <li>Trim restoration</li>
+                        <li>Engine bay wipe-down</li>
+                    </ul>
+                    <!-- TEMPLATE:booking-url -->
+                    <a href="#booking" class="btn-pkg">Book Full Detail</a>
+                </div>
+                <div class="pkg">
+                    <h3>Showroom</h3>
+                    <div class="sub">Paint correction + ceramic</div>
+                    <!-- TEMPLATE:pricing -->
+                    <div class="price"><span class="currency">$</span>499</div>
+                    <div class="duration">~ 6&ndash;8 hours</div>
+                    <ul>
+                        <li>Everything in Full Detail</li>
+                        <li>1-stage paint correction</li>
+                        <li>Ceramic coating (6-mo)</li>
+                        <li>Headlight restoration</li>
+                        <li>Glass sealant</li>
+                        <li>Carpet extraction</li>
+                    </ul>
+                    <!-- TEMPLATE:booking-url -->
+                    <a href="#booking" class="btn-pkg">Book Showroom</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt" id="gallery">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Receipts</div>
+                <h2 style="color:var(--jet);">Before &amp; After</h2>
+                <p>Daily-drivers, garage-queens, work trucks &mdash; we treat them all like the showroom floor.</p>
+            </div>
+            <div class="gallery">
+                <!-- TEMPLATE:gallery — replace .ba-img divs with <img src="..."> when ready -->
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 01</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 01</div>
+                    <div class="ba-caption">Daily-driver SUV &mdash; full detail + paint correction.</div>
+                </div>
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 02</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 02</div>
+                    <div class="ba-caption">Truck interior &mdash; pet hair, mud, steam &amp; shampoo.</div>
+                </div>
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 03</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 03</div>
+                    <div class="ba-caption">Sports coupe &mdash; clay bar, sealant, ceramic top-up.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="booking">
+        <div class="container">
+            <div class="cta-strip">
+                <div class="cta-card book">
+                    <h3>Book Online</h3>
+                    <p>Pick a package, pick a time, drop the address &mdash; we confirm within the hour.</p>
+                    <!-- TEMPLATE:booking-url — swap href to Calendly, Square, Acuity, etc. -->
+                    <a href="#" class="btn-big">Schedule Detail</a>
+                </div>
+                <div class="cta-card pay">
+                    <h3>Pay Securely</h3>
+                    <p>Card, Apple Pay, Google Pay. Tip via the same screen if you're feeling kind.</p>
+                    <!-- TEMPLATE:payment-url — swap href to Square, Stripe invoice link, etc. -->
+                    <a href="#" class="btn-big">Pay Invoice</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block dark" id="addons">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Build your detail</div>
+                <h2>Add-Ons</h2>
+                <p>Stack any of these on top of an Express or Full Detail. Add at booking or on-site.</p>
+            </div>
+            <div class="addons">
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Pet Hair Removal</h4>
+                        <p>Heavy shedding? We'll get it out of fabric and crevices.</p>
+                    </div>
+                    <!-- TEMPLATE:pricing -->
+                    <div class="addon-price">+$40</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Headlight Restoration</h4>
+                        <p>Sand, polish, &amp; UV-seal cloudy headlights. Per pair.</p>
+                    </div>
+                    <div class="addon-price">+$60</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Engine Bay Detail</h4>
+                        <p>Degrease, brush, dress &mdash; engine looks as clean as the paint.</p>
+                    </div>
+                    <div class="addon-price">+$50</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Clay Bar &amp; Sealant</h4>
+                        <p>Smooths paint, locks in shine for ~3 months.</p>
+                    </div>
+                    <div class="addon-price">+$75</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Carpet Shampoo</h4>
+                        <p>Hot-water extraction on floor carpets &amp; mats.</p>
+                    </div>
+                    <div class="addon-price">+$45</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Leather Conditioner</h4>
+                        <p>Clean &amp; condition &mdash; keeps seats from cracking.</p>
+                    </div>
+                    <div class="addon-price">+$35</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Odor Bomb</h4>
+                        <p>Neutralize smoke, pet, or mildew odors.</p>
+                    </div>
+                    <div class="addon-price">+$30</div>
+                </div>
+                <div class="addon">
+                    <div class="addon-info">
+                        <h4>Wheel Off Detail</h4>
+                        <p>Wheels removed for full-barrel polish &amp; brake dust strip.</p>
+                    </div>
+                    <div class="addon-price">+$120</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt" id="area">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Where we drive</div>
+                <h2 style="color:var(--jet);">Service Area</h2>
+                <p>We bring everything we need &mdash; water tank, power, and supplies. Driveway, street, or office lot.</p>
+            </div>
+            <div class="area">
+                <div class="area-map">
+                    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2a2a2a" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="400" height="300" fill="#0a0a0a"/>
+                        <rect width="400" height="300" fill="url(#grid2)"/>
+                        <path d="M50,150 Q100,80 180,100 T350,150 Q320,230 200,240 T50,200 Z" fill="rgba(0,200,230,0.12)" stroke="#00c8e6" stroke-width="2" stroke-dasharray="6 4"/>
+                        <circle cx="200" cy="160" r="14" fill="#00c8e6"/>
+                        <circle cx="200" cy="160" r="6" fill="#0a0a0a"/>
+                        <text x="200" y="200" text-anchor="middle" font-family="Rajdhani, sans-serif" font-weight="700" font-size="14" fill="#00c8e6" letter-spacing="3">SERVICE AREA</text>
+                    </svg>
+                </div>
+                <div>
+                    <h3>Cities We Cover</h3>
+                    <p style="color:var(--muted);">Outside this map? Ask &mdash; we'll usually come for a $25 travel fee.</p>
+                    <!-- TEMPLATE:cities -->
+                    <ul class="cities">
+                        <li>City One</li>
+                        <li>City Two</li>
+                        <li>City Three</li>
+                        <li>City Four</li>
+                        <li>City Five</li>
+                        <li>City Six</li>
+                        <li>City Seven</li>
+                        <li>City Eight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Talk to us</div>
+                <h2>Contact</h2>
+                <p>Got a question, a special-condition car, or a fleet? Drop us a note.</p>
+            </div>
+            <div class="contact-wrap">
+                <div class="contact-info">
+                    <h3>Reach Us</h3>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                        <!-- TEMPLATE:phone -->
+                        <div><strong>Phone</strong><br><a href="tel:5555550100">(555) 555-0100</a></div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                        <!-- TEMPLATE:email -->
+                        <div><strong>Email</strong><br><a href="mailto:hello@example.com">hello@example.com</a></div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                        <!-- TEMPLATE:address -->
+                        <div><strong>Based In</strong><br>Your City, State</div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                        <div><strong>Hours</strong><br>7 days, 7am&ndash;7pm</div>
+                    </div>
+                </div>
+                <!-- TEMPLATE:email — swap action for mailto: or form endpoint -->
+                <form class="contact" action="mailto:hello@example.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="text" placeholder="Best number to text" required>
+                    <label for="vehicle">Vehicle</label>
+                    <input id="vehicle" name="vehicle" type="text" placeholder="Year / Make / Model" required>
+                    <label for="package">Package</label>
+                    <select id="package" name="package">
+                        <option>Express &mdash; $89</option>
+                        <option selected>Full Detail &mdash; $199</option>
+                        <option>Showroom &mdash; $499</option>
+                        <option>Not sure yet</option>
+                    </select>
+                    <label for="notes">Anything we should know?</label>
+                    <textarea id="notes" name="notes" placeholder="Pet hair, mud, specific spots, scheduling preferences..."></textarea>
+                    <button type="submit">Request a Quote &rarr;</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site">
+        <div class="container">
+            <a href="#" class="wordmark">
+                <span class="mark">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.4L19 9l-4.5 3.3L16 18l-4-2.8L8 18l1.5-5.7L5 9l5.2-1.6L12 2z"/></svg>
+                </span>
+                <!-- TEMPLATE:business-name -->
+                Detail&nbsp;Co.
+            </a>
+            <div>
+                <!-- TEMPLATE:phone -->
+                <a href="tel:5555550100">(555) 555-0100</a> &middot;
+                <!-- TEMPLATE:email -->
+                <a href="mailto:hello@example.com">hello@example.com</a>
+            </div>
+            <div class="stamp">
+                &copy; 2026 Detail Co. &middot; Preview built by <a href="https://bell-etienne.surge.sh" target="_blank" rel="noopener">Bell-Etienne</a> &middot; Digital Handyman for the Trades
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<!--
+    HANDYMAN TEMPLATE — Bell-Etienne
+    Swap points (search for "TEMPLATE:"):
+      - TEMPLATE:business-name     wordmark + footer + meta
+      - TEMPLATE:phone             tel: links + display
+      - TEMPLATE:email             contact form action + display
+      - TEMPLATE:address           service area + footer
+      - TEMPLATE:booking-url       online booking button href
+      - TEMPLATE:payment-url       payment button href
+      - TEMPLATE:cities            service area city list
+      - TEMPLATE:gallery           before/after image src (replace SVG placeholders)
+      - TEMPLATE:license           license number on badge
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TEMPLATE:business-name -->
+    <meta name="description" content="Handyman Co. — licensed & insured local handyman services. Repairs, installs, and odd jobs done right.">
+    <title>Handyman Co. | Licensed &amp; Insured Local Handyman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0e1a2b;
+            --navy-2: #16263d;
+            --orange: #f06a1a;
+            --orange-2: #d75810;
+            --ink: #1a2330;
+            --muted: #5b6675;
+            --line: #e6ebf0;
+            --cream: #f6f8fb;
+            --white: #ffffff;
+            --radius: 10px;
+            --shadow: 0 8px 24px rgba(14, 26, 43, 0.08);
+            --shadow-lg: 0 20px 50px rgba(14, 26, 43, 0.18);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img, svg { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Preview ribbon */
+        .preview-ribbon {
+            background: var(--navy);
+            color: var(--white);
+            font-size: 0.78rem;
+            text-align: center;
+            padding: 8px 16px;
+            letter-spacing: 0.05em;
+        }
+        .preview-ribbon a {
+            color: var(--orange);
+            font-weight: 700;
+            border-bottom: 1px dotted var(--orange);
+        }
+
+        /* Header / Nav */
+        header.site {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            gap: 20px;
+        }
+        .wordmark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            color: var(--navy);
+            text-transform: uppercase;
+        }
+        .wordmark .mark {
+            width: 38px;
+            height: 38px;
+            background: var(--navy);
+            border-radius: 6px;
+            display: grid;
+            place-items: center;
+            color: var(--orange);
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta {
+            background: var(--orange);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .nav-cta:hover { background: var(--orange-2); }
+
+        @media (max-width: 780px) {
+            .nav-links { display: none; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+            color: var(--white);
+            padding: 80px 0 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(240, 106, 26, 0.15), transparent 50%);
+        }
+        .hero-inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+        .hero h1 .accent { color: var(--orange); }
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.15s, background 0.15s;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+        .btn-primary:hover { background: var(--orange-2); transform: translateY(-2px); }
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.2); }
+
+        .hero-badge {
+            background: var(--white);
+            color: var(--ink);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+        .badge-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .badge-row:last-child { border-bottom: none; }
+        .badge-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--cream);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+        .badge-text strong { display: block; font-size: 0.95rem; }
+        .badge-text span { color: var(--muted); font-size: 0.85rem; }
+
+        @media (max-width: 780px) {
+            .hero { padding: 50px 0 60px; }
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* Section base */
+        section.block { padding: 80px 0; }
+        section.block.alt { background: var(--cream); }
+        .section-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-eyebrow {
+            font-family: 'Oswald', sans-serif;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        .section-head h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+        .section-head p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 16px auto 0;
+            font-size: 1.05rem;
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .service {
+            background: var(--white);
+            padding: 28px;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .service:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--orange);
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            color: var(--orange);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 16px;
+        }
+        .service h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+        .service p { color: var(--muted); font-size: 0.95rem; }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .ba-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+        .ba-img {
+            aspect-ratio: 1 / 1;
+            position: relative;
+            background: linear-gradient(135deg, #cdd5e0, #aab5c4);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+        }
+        .ba-img.after {
+            background: linear-gradient(135deg, var(--navy-2), var(--navy));
+        }
+        .ba-img::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+        }
+        .ba-caption {
+            grid-column: span 2;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 600;
+            background: var(--white);
+        }
+
+        /* CTA strip — booking + payment */
+        .cta-strip {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .cta-card {
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .cta-card.book {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .cta-card.pay {
+            background: var(--orange);
+            color: var(--white);
+        }
+        .cta-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .cta-card p {
+            margin-bottom: 22px;
+            opacity: 0.9;
+        }
+        .cta-card .btn-big {
+            background: var(--white);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .cta-card.pay .btn-big { color: var(--orange); }
+        .cta-card .btn-big:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+        @media (max-width: 700px) {
+            .cta-strip { grid-template-columns: 1fr; }
+        }
+
+        /* Service area */
+        .area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .area-map {
+            aspect-ratio: 4 / 3;
+            background: var(--cream);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+        }
+        .area-map svg {
+            width: 100%;
+            height: 100%;
+        }
+        .cities {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .cities li {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cities li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--orange);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 780px) {
+            .area { grid-template-columns: 1fr; }
+        }
+
+        /* Contact form */
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+        .contact-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        .contact-info .row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+        .contact-info .row .icon {
+            color: var(--orange);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .contact-info a:hover { color: var(--orange); }
+
+        form.contact {
+            display: grid;
+            gap: 14px;
+        }
+        form.contact label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: -10px;
+        }
+        form.contact input,
+        form.contact textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--ink);
+        }
+        form.contact textarea { min-height: 130px; resize: vertical; }
+        form.contact input:focus,
+        form.contact textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(240, 106, 26, 0.15);
+        }
+        form.contact button {
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        form.contact button:hover { background: var(--orange-2); }
+
+        @media (max-width: 780px) {
+            .contact-wrap { grid-template-columns: 1fr; }
+        }
+
+        /* Licensed badge */
+        .license-strip {
+            background: var(--navy);
+            color: var(--white);
+            padding: 30px 0;
+        }
+        .license-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .license-badge {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255,255,255,0.06);
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .license-badge .icon {
+            width: 38px;
+            height: 38px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+        .license-badge strong { display: block; font-size: 0.95rem; }
+        .license-badge span { font-size: 0.8rem; opacity: 0.7; font-family: monospace; }
+
+        /* Footer */
+        footer.site {
+            background: #0a121f;
+            color: rgba(255,255,255,0.6);
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+        }
+        footer.site .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        footer.site .wordmark { color: var(--white); }
+        .stamp {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            font-size: 0.8rem;
+        }
+        .stamp a {
+            color: var(--orange);
+            font-weight: 600;
+            border-bottom: 1px dotted var(--orange);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview ribbon — remove when deploying to client domain -->
+    <div class="preview-ribbon">
+        Preview built by <a href="https://bell-etienne.surge.sh" target="_blank" rel="noopener">Bell-Etienne</a> — Digital Handyman for the Trades
+    </div>
+
+    <header class="site">
+        <div class="container nav">
+            <a href="#" class="wordmark">
+                <span class="mark">
+                    <!-- Hammer + wrench mark -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </span>
+                <!-- TEMPLATE:business-name -->
+                Handyman&nbsp;Co.
+            </a>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#area">Service Area</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <!-- TEMPLATE:phone -->
+            <a href="tel:5555550100" class="nav-cta">Call (555) 555-0100</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div>
+                <h1>Honest work.<br><span class="accent">Done right</span> the first time.</h1>
+                <p>Your local licensed &amp; insured handyman for repairs, installs, and the odd jobs that never seem to get done. Free quotes, on-time arrival, clean job sites.</p>
+                <div class="hero-cta">
+                    <!-- TEMPLATE:booking-url -->
+                    <a href="#booking" class="btn btn-primary">Book Online &rarr;</a>
+                    <!-- TEMPLATE:phone -->
+                    <a href="tel:5555550100" class="btn btn-ghost">Call Now</a>
+                </div>
+            </div>
+            <div class="hero-badge">
+                <div class="badge-row">
+                    <div class="badge-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div class="badge-text"><strong>Licensed &amp; Insured</strong><span>State-licensed, fully bonded</span></div>
+                </div>
+                <div class="badge-row">
+                    <div class="badge-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="badge-text"><strong>On-Time Arrival</strong><span>We text 30 min before</span></div>
+                </div>
+                <div class="badge-row">
+                    <div class="badge-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <div class="badge-text"><strong>Free Quotes</strong><span>No surprise charges</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="services">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">What we do</div>
+                <h2>Services</h2>
+                <p>From a leaking faucet to a full deck rebuild — if it needs doing around the house, we handle it.</p>
+            </div>
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5L3 21"></path><path d="M14 5.5L18.5 10"></path><path d="M16 4L20 8"></path><path d="M21 3l-3 3"></path><path d="M9 9l6 6"></path></svg></div>
+                    <h3>General Repairs</h3>
+                    <p>Drywall patches, door tune-ups, broken tile, squeaky stairs — the punch-list stuff.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"></path></svg></div>
+                    <h3>Plumbing Fixes</h3>
+                    <p>Leaky faucets, running toilets, garbage disposals, and shutoff valve replacements.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg></div>
+                    <h3>Electrical</h3>
+                    <p>Outlet swaps, light fixtures, ceiling fans, dimmer installs. Code-compliant work only.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                    <h3>Door &amp; Window</h3>
+                    <p>Sticking doors, rotted frames, weather-stripping, screen rebuilds, lock changes.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg></div>
+                    <h3>Drywall &amp; Paint</h3>
+                    <p>Patch holes, texture-match, room paint, accent walls, baseboard touch-ups.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"></path><path d="M5 12V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg></div>
+                    <h3>Furniture &amp; Mounting</h3>
+                    <p>TV mounts, shelf installs, furniture assembly, picture hanging done plumb.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+                    <h3>Appliance Install</h3>
+                    <p>Dishwashers, ranges, washer/dryer hookups, microwave swaps, water lines.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3>Honey-Do Lists</h3>
+                    <p>Got a list? We knock it out in one visit. Half-day and full-day flat rates available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt" id="gallery">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Receipts</div>
+                <h2>Before &amp; After</h2>
+                <p>Real jobs, real results. Click any pair to see the full project.</p>
+            </div>
+            <div class="gallery">
+                <!-- TEMPLATE:gallery — replace .ba-img divs with <img src="..."> when ready -->
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 01</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 01</div>
+                    <div class="ba-caption">Rotted bathroom subfloor &mdash; full rebuild, tile, and trim.</div>
+                </div>
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 02</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 02</div>
+                    <div class="ba-caption">Kitchen cabinet refresh &mdash; doors, hardware, paint.</div>
+                </div>
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE">PHOTO 03</div>
+                    <div class="ba-img after" data-label="AFTER">PHOTO 03</div>
+                    <div class="ba-caption">Backyard deck &mdash; rebuilt rails, restained, hardware swap.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="booking">
+        <div class="container">
+            <div class="cta-strip">
+                <div class="cta-card book">
+                    <h3>Book Online</h3>
+                    <p>Pick a time, tell us the job &mdash; we'll confirm within the hour.</p>
+                    <!-- TEMPLATE:booking-url — swap href to Calendly, Acuity, Square Appointments, etc. -->
+                    <a href="#" class="btn-big">Schedule a Visit</a>
+                </div>
+                <div class="cta-card pay">
+                    <h3>Pay Your Invoice</h3>
+                    <p>Already had work done? Pay securely by card or Apple Pay.</p>
+                    <!-- TEMPLATE:payment-url — swap href to Square, Stripe, or QuickBooks invoice link -->
+                    <a href="#" class="btn-big">Pay Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt" id="area">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Where we work</div>
+                <h2>Service Area</h2>
+                <p>Servicing homeowners and property managers across the region.</p>
+            </div>
+            <div class="area">
+                <div class="area-map">
+                    <!-- Stylized map placeholder — swap for embed iframe if a real Google Map is wanted -->
+                    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dde4ec" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="400" height="300" fill="#f6f8fb"/>
+                        <rect width="400" height="300" fill="url(#grid)"/>
+                        <path d="M50,150 Q100,80 180,100 T350,150 Q320,230 200,240 T50,200 Z" fill="rgba(14,26,43,0.08)" stroke="#0e1a2b" stroke-width="2" stroke-dasharray="6 4"/>
+                        <circle cx="200" cy="160" r="14" fill="#f06a1a"/>
+                        <circle cx="200" cy="160" r="6" fill="#fff"/>
+                        <text x="200" y="200" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="14" fill="#0e1a2b" letter-spacing="2">SERVICE AREA</text>
+                    </svg>
+                </div>
+                <div>
+                    <h3 style="font-family:'Oswald',sans-serif;font-size:1.4rem;color:var(--navy);text-transform:uppercase;margin-bottom:8px;">Cities We Serve</h3>
+                    <p style="color:var(--muted);">If you don't see your town listed, give us a call &mdash; we usually can.</p>
+                    <!-- TEMPLATE:cities -->
+                    <ul class="cities">
+                        <li>City One</li>
+                        <li>City Two</li>
+                        <li>City Three</li>
+                        <li>City Four</li>
+                        <li>City Five</li>
+                        <li>City Six</li>
+                        <li>City Seven</li>
+                        <li>City Eight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-eyebrow">Get a quote</div>
+                <h2>Contact Us</h2>
+                <p>Tell us what's broken, what's bugging you, or what needs hanging. We answer fast.</p>
+            </div>
+            <div class="contact-wrap">
+                <div class="contact-info">
+                    <h3>Reach Us Direct</h3>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                        <!-- TEMPLATE:phone -->
+                        <div><strong>Phone</strong><br><a href="tel:5555550100">(555) 555-0100</a></div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                        <!-- TEMPLATE:email -->
+                        <div><strong>Email</strong><br><a href="mailto:hello@example.com">hello@example.com</a></div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                        <!-- TEMPLATE:address -->
+                        <div><strong>Based In</strong><br>Your City, State</div>
+                    </div>
+                    <div class="row">
+                        <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                        <div><strong>Hours</strong><br>Mon&ndash;Sat, 7am&ndash;6pm</div>
+                    </div>
+                </div>
+                <!-- TEMPLATE:email — set action to mailto: or form endpoint (Formspree, Netlify Forms, etc.) -->
+                <form class="contact" action="mailto:hello@example.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+                    <label for="email">Email or Phone</label>
+                    <input id="email" name="email" type="text" placeholder="So we can reach you back" required>
+                    <label for="job">What needs doing?</label>
+                    <textarea id="job" name="job" placeholder="Tell us about the project — photos help. We'll follow up with a quote." required></textarea>
+                    <button type="submit">Send &rarr;</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="license-strip">
+        <div class="container">
+            <div class="license-row">
+                <div class="license-badge">
+                    <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                    <!-- TEMPLATE:license -->
+                    <div><strong>Licensed</strong><span>Lic. #000000</span></div>
+                </div>
+                <div class="license-badge">
+                    <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                    <div><strong>Insured</strong><span>General liability</span></div>
+                </div>
+                <div class="license-badge">
+                    <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><polyline points="9 14 6 22 12 18 18 22 15 14"></polyline></svg></span>
+                    <div><strong>Bonded</strong><span>Surety bonded</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site">
+        <div class="container">
+            <a href="#" class="wordmark">
+                <span class="mark">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </span>
+                <!-- TEMPLATE:business-name -->
+                Handyman&nbsp;Co.
+            </a>
+            <div>
+                <!-- TEMPLATE:phone -->
+                <a href="tel:5555550100">(555) 555-0100</a> &middot;
+                <!-- TEMPLATE:email -->
+                <a href="mailto:hello@example.com">hello@example.com</a>
+            </div>
+            <div class="stamp">
+                &copy; 2026 Handyman Co. &middot; Preview built by <a href="https://bell-etienne.surge.sh" target="_blank" rel="noopener">Bell-Etienne</a> &middot; Digital Handyman for the Trades
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

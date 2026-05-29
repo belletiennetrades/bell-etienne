@@ -8,4 +8,7 @@
 !southcoast/
 !marcwilmers/
 !rjsworkboots/
+!templates/
+!templates/handyman/
+!templates/detailer/
 !.gitignore
