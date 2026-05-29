@@ -1,12 +1,15 @@
 # session_log.md — Local Digital Caretaker
 
 ## CURRENT STATE
-Three preview demo sites are live on GitHub Pages:
+Three preview demo sites + two reusable templates are live on GitHub Pages, and the main site now opens with a portfolio strip linking all five:
+- **Main site (portfolio on top):** https://belletiennetrades.github.io/bell-etienne/
 - **South Coast Aquatics:** https://belletiennetrades.github.io/bell-etienne/southcoast/
-- **Marc Wilmers Heating & Air:** https://belletiennetrades.github.io/bell-etienne/marcwilmers/
+- **Marc Wilmers Heating & Air (photo-led editorial):** https://belletiennetrades.github.io/bell-etienne/marcwilmers/
 - **RJ's Work Boots:** https://belletiennetrades.github.io/bell-etienne/rjsworkboots/
+- **Handyman template:** https://belletiennetrades.github.io/bell-etienne/templates/handyman/
+- **Mobile Detailer template:** https://belletiennetrades.github.io/bell-etienne/templates/detailer/
 
-All three are ready to share with their respective prospects. Outreach pipeline still has a fresh 50-lead SFV "no-website" prospect list ready to mail to Charles + Chris — paused at the send step because the Gmail app password is not recoverable from current context.
+All three demos are ready to share with their respective prospects. Templates are ready to be rebranded for cold prospects in ~5 minutes via `TEMPLATE:` swap markers. Outreach pipeline still has a fresh 50-lead SFV "no-website" prospect list ready to mail to Charles + Chris — paused at the send step because the Gmail app password is not recoverable from current context.
 
 ## PICK UP HERE
 1. **📌 PINNED: Send 50-prospect SFV list** to charles@olinthus.com + trickstand@gmail.com (Chris). Subject already chosen: "SFV prospects — 50 detailers + handymen with no website". Body = full contents of `prospects_no_website.md`. Sender = belletienne.trades@gmail.com. Two paths to unblock:
@@ -23,6 +26,15 @@ All three are ready to share with their respective prospects. Outreach pipeline 
 ## OPEN QUESTIONS / PROTOCOLS TO DEFINE
 - **Prospect Demo Protocol (Discovery → Build → Deploy):** Both South Coast and Marc Wilmers were built ad-hoc this week. The shape is starting to repeat — research the prospect (Yelp/Google for owner, phone, services, reviews), build a preview at `/<slug>/index.html` modeled on the established template (inline-SVG logo, top preview ribbon, tap-to-call, full sections, Bell-Etienne footer stamp), add `!<slug>/` to `.gitignore` allowlist, commit & push. Worth writing this up as a checklist before the next 2-3 demos so it's repeatable instead of remembered.
 - **Go-Live Protocol:** Deferred until we have paying customers. Will cover: domain transfer/registration, DNS, SSL, redirect from old site, email/contact form wiring, analytics, ownership handoff, recurring caretaker setup. Not worth designing in the abstract — first real customer will define the real shape.
+
+### Session 8 — 2026-05-28 → 2026-05-29
+- **Portfolio on main site (top):** Added "Live Demos" and "Ready Templates" sections to the top of `index.html` as five dark contrasting tile-cards. Iteration: initially placed mid-page, then user asked to move to top and use contrasting boxes that pop. Final layout = two grouped lists (3 demos + 2 templates), gold-accent hover arrows.
+- **Two reusable templates built:** `/templates/handyman/index.html` and `/templates/detailer/index.html`. Both ship with neutral typographic wordmarks ("HANDYMAN CO.", "DETAIL CO.") — see [[feedback-template-branding]] in memory for the rationale (Option C of the partner's three-option logo question). Handyman: navy + safety-orange, 8 services, before/after gallery, booking + payment CTAs, service area, contact form, licensed/insured/bonded badge strip. Detailer: jet-black + electric cyan, 3 pricing tiers, before/after gallery (later swapped for car photos), booking + payment, 8 add-ons, service area, contact form with vehicle/package fields. Every swap point marked `<!-- TEMPLATE:* -->` for fast rebrand (~5 min per site).
+- **Wilmers HVAC redesigned as photo-led editorial:** User said the three demos felt too similar and asked for a "super different" look. Replaced the grid-and-icon layout with a magazine-style design — full-bleed Unsplash hero photo (AC unit), Fraunces serif display type, scrolling trust marquee, photo-on-left meet-Marc split, six photo-led service cards, full-bleed italic pull-quote over a dimmed interior photo, slate stats band with italic serif numerals, 4-step process with sticky thermostat photo, photo-backed service-area map, big tap-to-call final CTA over a dimmed AC photo. Palette (slate-navy + ember) preserved; cream paper background gives the editorial vibe. See [[feedback-demo-variety]] in memory for the differentiation pattern.
+- **Detailer template photo update:** Added Unsplash photos covering four car categories the user named — JDM tuner, classic Camaro, family SUV, work truck. Hero swapped to a dark parking-garage car photo. Gallery uses the same photo on both before/after halves with CSS filters dimming the "before" side, so a real prospect rebrand needs only one URL swap per pair, not two.
+- **Photo sourcing workflow established:** WebFetch Unsplash search pages → extract `https://images.unsplash.com/photo-<id>` URLs → verify each with `curl -s -o /dev/null -w "%{http_code}"` before committing. 18 photos verified across this session, zero broken links shipped.
+- **Memory:** Wrote two feedback memories — [[feedback-demo-variety]] (visual differentiation via photo-led layouts + per-demo font swaps) and [[feedback-template-branding]] (neutral wordmark approach, Option C of the partner's question).
+- **Outreach pipeline:** No change — 50-prospect email still blocked on Gmail app password; three demo-share tasks for South Coast, Marc Wilmers, and RJ's still pending.
 
 ### Session 7 — 2026-05-22
 - **RJ's Work Boots Demo Live:** Reviewed previously-built `rjsworkboots/index.html` (1651 lines, leather/brass/oxblood palette, Santa Clarita specialty boot shop — 27 brands, expert fitting). `.gitignore` was already allowlisted for the directory from a prior session. Committed (`6463004`), pushed to main, polled GitHub Pages until live (HTTP 200 on 3rd attempt). Now live at https://belletiennetrades.github.io/bell-etienne/rjsworkboots/.

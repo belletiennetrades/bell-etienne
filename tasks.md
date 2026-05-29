@@ -11,10 +11,15 @@
 - [x] Initial staging of South Coast demo at `/southcoast/index.html`
 - [x] **Marc Wilmers Demo:** Build full preview at `/marcwilmers/index.html` and deploy to GitHub Pages
 - [x] **RJ's Work Boots Demo:** Build full preview at `/rjsworkboots/index.html` and deploy to GitHub Pages
+- [x] **Portfolio on main site:** Promote a "Live Demos" + "Ready Templates" strip to the top of `index.html` as five contrasting dark tile-cards
+- [x] **Handyman template:** Build cookie-cutter `/templates/handyman/index.html` with neutral wordmark and `TEMPLATE:` swap markers
+- [x] **Mobile Detailer template:** Build cookie-cutter `/templates/detailer/index.html` with neutral wordmark, including car photos across 4 categories (JDM, muscle, family SUV, work truck)
+- [x] **Wilmers visual differentiation rebuild:** Convert `/marcwilmers/index.html` to a photo-led editorial magazine layout (Fraunces serif, full-bleed Unsplash photos, scrolling trust marquee, photo-backed pull-quote)
 - [ ] Share live demo with Matt Warshaw / South Coast Aquatics for feedback
 - [ ] Share live demo with Marc Wilmers — (818) 517-6010
 - [ ] Share live demo with RJ's Work Boots — (661) 259-1978
 - [ ] Enhance UI/UX (Refine typography, mobile links, subtle accents)
+- [ ] Visually differentiate `southcoast` and `rjsworkboots` against the new Wilmers editorial style if needed (both still use Playfair display)
 
 ## 📋 Protocols (To Formalize)
 - [ ] **Prospect Demo Protocol (Discovery → Build → Deploy):** Write a repeatable checklist now that we have three demos under our belt — research inputs needed, template anchor file, palette/copy decisions, `.gitignore` allowlist step, commit/push steps, sharing message format.
