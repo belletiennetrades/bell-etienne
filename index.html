@@ -180,6 +180,62 @@
             font-size: 0.9rem;
         }
 
+        .work-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .work-item {
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+        }
+
+        .work-item:hover .work-title {
+            color: var(--accent);
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .work-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .work-tag {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+
+        .work-desc {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .work-url {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            word-break: break-all;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 30px 20px;
@@ -271,6 +327,43 @@
             <li class="premium-item">
                 <span class="premium-title">Text-to-Customer</span>
                 A "Text Us" button on your site that goes straight to your phone. Never miss a lead while you're on a job.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Recent Work</h2>
+        <p>Live preview sites built for local businesses. Each one is a working demo — tap to view on your phone.</p>
+        <ul class="work-list">
+            <li>
+                <a href="https://belletiennetrades.github.io/bell-etienne/southcoast/" class="work-item" target="_blank" rel="noopener">
+                    <div class="work-header">
+                        <span class="work-title">South Coast Aquatics</span>
+                        <span class="work-tag">Conejo Valley</span>
+                    </div>
+                    <div class="work-desc">Water polo &amp; swimming club — programs, coaches, contact, full mobile-first rebuild.</div>
+                    <div class="work-url">belletiennetrades.github.io/bell-etienne/southcoast</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://belletiennetrades.github.io/bell-etienne/marcwilmers/" class="work-item" target="_blank" rel="noopener">
+                    <div class="work-header">
+                        <span class="work-title">Marc Wilmers Heating &amp; Air</span>
+                        <span class="work-tag">Santa Clarita</span>
+                    </div>
+                    <div class="work-desc">HVAC contractor — service grid, trust badges, Yelp reviews, tap-to-call throughout.</div>
+                    <div class="work-url">belletiennetrades.github.io/bell-etienne/marcwilmers</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://belletiennetrades.github.io/bell-etienne/rjsworkboots/" class="work-item" target="_blank" rel="noopener">
+                    <div class="work-header">
+                        <span class="work-title">RJ's Work Boots</span>
+                        <span class="work-tag">Santa Clarita</span>
+                    </div>
+                    <div class="work-desc">Specialty boot retailer — 27 brands, expert fitting, leather/brass/oxblood palette.</div>
+                    <div class="work-url">belletiennetrades.github.io/bell-etienne/rjsworkboots</div>
+                </a>
             </li>
         </ul>
     </section>
