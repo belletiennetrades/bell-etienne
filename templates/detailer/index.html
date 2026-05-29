@@ -152,17 +152,17 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 75% 30%, rgba(0, 200, 230, 0.18), transparent 55%),
-                radial-gradient(circle at 20% 80%, rgba(0, 200, 230, 0.08), transparent 60%);
+                linear-gradient(120deg, rgba(10,10,10,0.92) 30%, rgba(10,10,10,0.55) 100%),
+                url('https://images.unsplash.com/photo-1680015158419-87366afba8db?w=2000&q=80&auto=format&fit=crop') center/cover no-repeat;
         }
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background:
+                radial-gradient(circle at 75% 30%, rgba(0, 200, 230, 0.16), transparent 55%),
+                linear-gradient(180deg, transparent 70%, rgba(10,10,10,0.6) 100%);
+            pointer-events: none;
         }
         .hero-inner {
             position: relative;
@@ -432,28 +432,36 @@
         .ba-img {
             aspect-ratio: 1 / 1;
             position: relative;
-            background: linear-gradient(135deg, #4a4f57, #2a2e34);
-            display: grid;
-            place-items: center;
-            color: var(--chrome);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.2em;
+            background-size: cover;
+            background-position: center;
         }
-        .ba-img.after {
-            background: linear-gradient(135deg, #00637a, #003d4a);
-            color: var(--white);
+        .ba-img.before {
+            filter: grayscale(0.55) brightness(0.55) saturate(0.6) contrast(0.95);
+        }
+        .ba-img.before::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
         }
         .ba-img::after {
             content: attr(data-label);
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.7);
-            padding: 4px 10px;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.8);
+            padding: 5px 12px;
             border-radius: 4px;
             font-size: 0.7rem;
             color: var(--cyan);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            z-index: 2;
+        }
+        .ba-img.after::after {
+            background: var(--cyan);
+            color: var(--jet);
         }
         .ba-caption {
             grid-column: span 2;
@@ -858,21 +866,26 @@
                 <p>Daily-drivers, garage-queens, work trucks &mdash; we treat them all like the showroom floor.</p>
             </div>
             <div class="gallery">
-                <!-- TEMPLATE:gallery — replace .ba-img divs with <img src="..."> when ready -->
+                <!-- TEMPLATE:gallery — swap the inline background-image URLs for client photos. Same image is used on both sides; CSS dims the "before" half. -->
                 <div class="ba-pair">
-                    <div class="ba-img before" data-label="BEFORE">PHOTO 01</div>
-                    <div class="ba-img after" data-label="AFTER">PHOTO 01</div>
-                    <div class="ba-caption">Daily-driver SUV &mdash; full detail + paint correction.</div>
+                    <div class="ba-img before" data-label="BEFORE" style="background-image:url('https://images.unsplash.com/photo-1728056969982-e067a2fd2ea9?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-img after" data-label="AFTER" style="background-image:url('https://images.unsplash.com/photo-1728056969982-e067a2fd2ea9?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-caption">JDM tuner &mdash; full detail + ceramic top-up.</div>
                 </div>
                 <div class="ba-pair">
-                    <div class="ba-img before" data-label="BEFORE">PHOTO 02</div>
-                    <div class="ba-img after" data-label="AFTER">PHOTO 02</div>
-                    <div class="ba-caption">Truck interior &mdash; pet hair, mud, steam &amp; shampoo.</div>
+                    <div class="ba-img before" data-label="BEFORE" style="background-image:url('https://images.unsplash.com/photo-1622319544231-ce84790b689a?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-img after" data-label="AFTER" style="background-image:url('https://images.unsplash.com/photo-1622319544231-ce84790b689a?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-caption">Classic Camaro &mdash; paint correction + showroom polish.</div>
                 </div>
                 <div class="ba-pair">
-                    <div class="ba-img before" data-label="BEFORE">PHOTO 03</div>
-                    <div class="ba-img after" data-label="AFTER">PHOTO 03</div>
-                    <div class="ba-caption">Sports coupe &mdash; clay bar, sealant, ceramic top-up.</div>
+                    <div class="ba-img before" data-label="BEFORE" style="background-image:url('https://images.unsplash.com/photo-1758411898280-2dc7c95e0ba7?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-img after" data-label="AFTER" style="background-image:url('https://images.unsplash.com/photo-1758411898280-2dc7c95e0ba7?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-caption">Family SUV &mdash; pet-hair pull, carpet shampoo, leather.</div>
+                </div>
+                <div class="ba-pair">
+                    <div class="ba-img before" data-label="BEFORE" style="background-image:url('https://images.unsplash.com/photo-1610647929723-a8922852cd44?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-img after" data-label="AFTER" style="background-image:url('https://images.unsplash.com/photo-1610647929723-a8922852cd44?w=900&q=80&auto=format&fit=crop');"></div>
+                    <div class="ba-caption">Work truck &mdash; mud-out, engine bay, full re-set.</div>
                 </div>
             </div>
         </div>
